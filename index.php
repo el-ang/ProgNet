@@ -10,13 +10,26 @@
     <body>
         <svg width="0" height="0" aria-hidden="true">
             <defs>
-                <filter id="concave-hero" x="-30%" y="-30%" width="160%" height="160%">
-                    <feImage xlink:href="./src/filter/concave-hero.svg" result="map" preserveAspectRatio="none"/>
+                <filter id="hero-warp" x="0%" y="0%" width="100%" height="100%">
+                    <feImage xlink:href="./src/filter/hero-concave.svg" result="map" preserveAspectRatio="none"/>
                     <feGaussianBlur in="map" stdDeviation="2" result="mapBlur"/>
                     <feDisplacementMap in="SourceGraphic" in2="mapBlur" scale="50" xChannelSelector="R" yChannelSelector="G"/>
                 </filter>
+                <filter id="hero-threshold" x="0%" y="0%" width="100%" height="100%">
+                    <feComponentTransfer in="SourceGraphic" result="maskSolid">
+                        <feFuncR type="linear" slope="100" intercept=".5"/>
+                        <feFuncG type="linear" slope="100" intercept=".5"/>
+                        <feFuncB type="linear" slope="100" intercept=".5"/>
+                    </feComponentTransfer>
+                    <feFlood flood-color="white" result="white"/>
+                    <feComposite in="white" in2="maskSolid" operator="in"/>
+                </filter>
+                <mask id="hero-mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+                    <image xlink:href="./src/filter/hero-concave.svg" filter="url(#hero-threshold)" preserveAspectRatio="none"/>
+                </mask>
             </defs>
         </svg>
+
         <header class="hero">
             <h1>
                 <p>Pemr graman</p>
