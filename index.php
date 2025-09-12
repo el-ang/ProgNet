@@ -12,8 +12,7 @@
             <defs>
                 <filter id="hero-warp" x="0%" y="0%" width="100%" height="100%">
                     <feImage xlink:href="./src/filter/hero-concave.svg" result="map" preserveAspectRatio="none"/>
-                    <feGaussianBlur in="map" stdDeviation="2" result="mapBlur"/>
-                    <feDisplacementMap in="SourceGraphic" in2="mapBlur" scale="50" xChannelSelector="R" yChannelSelector="G"/>
+                    <feDisplacementMap in="SourceGraphic" in2="map" scale="50" xChannelSelector="R" yChannelSelector="G"/>
                 </filter>
                 <filter id="hero-threshold" x="0%" y="0%" width="100%" height="100%">
                     <feComponentTransfer in="SourceGraphic" result="maskSolid">
