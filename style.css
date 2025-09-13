@@ -68,10 +68,4 @@ html {
     height: 100%;
     background: var(--prim);
     filter: url(#hero-warp);
-    -webkit-mask: url(#hero-mask);
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: cover;
-    mask: url(#hero-mask);
-    mask-repeat: no-repeat;
-    mask-size: cover;
 }
