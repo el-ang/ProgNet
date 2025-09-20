@@ -1,0 +1,548 @@
+:root {
+    --bg: #080808;
+    --shd: #0f0f0f;
+    --prim: #ff3636;
+    --sec: #6424ff;
+    --txt: #fff;
+    --sub: #888;
+}
+
+@font-face {
+    font-family: "Space Mono";
+    src: url("./src/font/SpaceMono-Regular.woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Space Mono";
+    src: url("./src/font/SpaceMono-Italic.woff2");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Space Mono";
+    src: url("./src/font/SpaceMono-Bold.woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Space Mono";
+    src: url("./src/font/SpaceMono-BoldItalic.woff2");
+    font-weight: bold;
+    font-style: italic;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Mono", monospace;
+    color: var(--txt);
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+
+html {
+    background-color: var(--bg);
+    overflow-x: hidden;
+}
+
+.hero {
+    width: 100%;
+    height: 90vh;
+    margin-bottom: 10vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero::before {
+    width: 100%;
+    height: 80vh;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--prim);
+    --mask: url("./src/svg/hero-mask.svg") center / cover no-repeat;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    z-index: -1;
+}
+
+.hero::after {
+    content: "";
+    width: 60%;
+    height: min(60vw, 80vh);
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+}
+
+/*
+.hero.pc::after {
+    background: url("./src/img/mockup/Apple\ Pro\ Display\ XDR.png") center bottom / contain no-repeat;
+}
+
+.hero.pc>p {
+    width: min(90vw, 80vh);
+    transition: all .5s;
+    margin-bottom: calc(15vh + calc(1vh / 1vw) * 20vh);
+}
+
+.hero.pc>p::before {
+    content: "";
+    width: auto;
+    height: min(36vw, 58vh);
+    aspect-ratio: 16 / 9;
+    background: var(--sec);
+    position: absolute;
+    bottom: min(12.5vw, 20vh);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.hero.pc>p::after {
+    bottom: calc(27vh - calc(1vh / 1vw) * 4.5vh);
+    opacity: round(calc(5vh / 8vw), 1);
+} */
+
+h1 {
+    position: relative;
+}
+
+h1::before,
+h1 p:first-child:before,
+h1 p:first-child:after {
+    content: "";
+    width: 6vw;
+    height: 6vw;
+    position: absolute;
+    top: 12%;
+    left: 37%;
+    border-radius: 50%;
+    border: .5vw solid var(--txt);
+}
+
+h1 p:first-child {
+    font-size: 13vw;
+}
+
+h1 p:last-child {
+    font-size: 10vw;
+}
+
+@keyframes spin0 {
+    from {
+        width: 6vw;
+        left: 37%;
+    }
+    50% {
+        width: 0.001vw;
+        left: 40.45%;
+    }
+    to {
+        width: 6vw;
+        left: 37%;
+    }
+}
+
+h1 p:first-child::before {
+    animation: spin0 3s linear infinite;
+}
+
+@keyframes spin1 {
+    from {
+        width: 0.001vw;
+        left: 40.45%;
+    }
+    50% {
+        width: 6vw;
+        left: 37%;
+    }
+    to {
+        width: 0.001vw;
+        left: 40.45%;
+    }
+}
+
+h1 p:first-child::after {
+    animation: spin1 3s linear infinite;
+}
+
+h1 p:last-child::before,
+h1 p:last-child::after {
+    content: "";
+    width: 6vw;
+    height: .5vw;
+    position: absolute;
+    left: 37.5%;
+    background: var(--txt);
+}
+
+h1 p:last-child::before {
+    top: 21%;
+}
+
+h1 p:last-child::after {
+    top: 29.5%;
+}
+
+h1 * {
+    margin-top: -5vw;
+}
+
+.detail {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.detail p {
+    width: 80vw;
+}
+
+.detail a {
+    --col: var(--shd);
+    padding: .5rem;
+    padding-left: 2.5rem;
+    display: inline-block;
+    background: var(--sec);
+    color: var(--col);
+    font-weight: bold;
+    border-radius: .75rem;
+    position: relative;
+    border: 2px solid var(--col);
+    z-index: 2;
+    transition:
+        background-color .2s,
+        color .2s,
+        border-color .2s;
+}
+
+.detail a::after {
+    content: "";
+    background: var(--col);
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 50%;
+    left: .5rem;
+    transform: translateY(-50%);
+    --mask: url("./src/ico/social/gh.svg") center / cover no-repeat;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    transition: background-color .2s;
+}
+
+.detail a:hover,
+.detail a:focus {
+    --col: var(--sec);
+    background: var(--shd);
+}
+
+.detail a:active {
+    --col: var(--txt);
+    background: var(--sub);
+}
+
+h2 {
+    color: var(--prim);
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+h2::before {
+    content: "";
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+    float: left;
+    background: var(--prim);
+    --mask: url("./src/ico/stack/php.svg") center / cover no-repeat;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}
+
+h3 {
+    color: var(--sec);
+    font-size: 2rem;
+    transform: rotateZ(-2deg);
+    text-align: center;
+}
+
+section, .task {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 4rem;
+}
+
+section>*:not(:last-child) {
+    border-bottom: var(--shd) solid 2px;
+}
+
+.deck {
+    width: 90vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 20rem;
+    padding: 2rem;
+    aspect-ratio: 3.25 / 2.1;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: end;
+    background: var(--shd);
+    border-radius: 1rem;
+    border: 2px solid var(--card, var(--sub));
+    transition: all .5s ease-out;
+    transform: rotateZ(60deg);
+    margin: 4rem -9rem;
+}
+
+.card:hover,
+.card:active,
+.card:focus {
+    transform: rotateZ(80deg);
+    margin: 0 -1rem 2rem -5rem;
+}
+
+.card::before {
+    content: "";
+    width: 98%;
+    height: 96%;
+    position: absolute;
+    top: 2%;
+    left: 1%;
+    border-radius: .5rem;
+    transition: all .5s ease-out;
+    background: linear-gradient(45deg, #0000, #4444, #0000);
+    background-size: 200% 200%;
+    background-position: 100% 0%;
+}
+
+.card:hover::before,
+.card:active::before,
+.card:focus::before {
+    background-position: 0% 100%;
+}
+
+.card::after, .card h4::before, .card h4::after {
+    content: "";
+    width: 2rem;
+    height: 2rem;
+    right: 1rem;
+    position: absolute;
+    background: var(--card, var(--sub));
+    --mask: var(--label, var(--chip)) center / cover no-repeat;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}
+
+.card::after {
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+    background: linear-gradient(45deg, var(--card), var(--sub));
+}
+
+.card:nth-child(odd) {
+    --card: var(--prim);
+}
+
+.card:nth-child(even) {
+    --card: var(--sec);
+}
+
+.task:first-of-type .card:first-child {
+    --chip: url("./src/ico/ui/msg.svg");
+}
+
+.task:first-of-type .card:nth-child(2) {
+    --chip: url("./src/ico/ui/calc.svg");
+}
+
+.task:first-of-type .card:nth-child(3) {
+    --chip: url("./src/ico/ui/num.svg");
+}
+
+.task:first-of-type .card:nth-child(4) {
+    --chip: url("./src/ico/ui/abc.svg");
+}
+
+.task:first-of-type .card:nth-child(5) {
+    --chip: url("./src/ico/ui/food.svg");
+}
+
+.task:first-of-type .card:last-child {
+    --chip: url("./src/ico/ui/bio.svg");
+}
+
+.task:last-of-type .card:first-child {
+    --chip: url("./src/ico/ui/list.svg");
+}
+
+.task:last-of-type .card:nth-child(2) {
+    --chip: url("./src/ico/ui/nerd.svg");
+}
+
+.task:last-of-type .card:nth-child(3) {
+    --chip: url("./src/ico/ui/tag.svg");
+}
+
+.task:last-of-type .card:nth-child(4) {
+    --chip: url("./src/ico/ui/even.svg");
+}
+
+.task:last-of-type .card:nth-child(5) {
+    --chip: url("./src/ico/ui/data.svg");
+}
+
+.task:last-of-type .card:last-child {
+    --chip: url("./src/ico/ui/scobo.svg");
+}
+
+.card * {
+    color: var(--card);
+}
+
+.card h4::before {
+    top: 1rem;
+    --label: url("./src/ico/ui/web.svg");
+}
+
+.card h4::after {
+    bottom: 1rem;
+    --label: url("./src/ico/stack/php.svg");
+}
+
+footer {
+    width: 100vw;
+    padding: 3rem 5vw 2rem 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+footer::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--shd);
+    --mask: url("./src/svg/foot-sock.svg") center / cover no-repeat;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    z-index: -1;
+}
+
+.copy {
+    display: flex;
+}
+
+.copy * {
+    transition: all .2s ease-out;
+    display: inline-block;
+    color: var(--sub);
+}
+
+.copy p:first-child {
+    width: 5.5rem;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+}
+
+.copy p:last-child {
+    width: 1.9rem;
+    direction: rtl;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+}
+
+.copy:hover *,
+.copy:focus *{
+    color: var(--prim);
+}
+
+.copy:active * {
+    color: var(--txt);
+}
+
+.copy:hover p:first-child,
+.copy:focus p:first-child,
+.copy:active p:first-child {
+    width: 8rem;
+}
+
+.copy:hover p:nth-child(2),
+.copy:focus p:nth-child(2),
+.copy:active p:nth-child(2) {
+    opacity: 0;
+}
+
+.copy:hover p:last-child,
+.copy:focus p:last-child,
+.copy:active p:last-child {
+    width: 6.2rem;
+}
+
+.contact {
+    display: flex;
+    gap: max(4vw, 4vh);
+}
+
+.contact a {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: all .2s;
+    background: var(--sub);
+    -webkit-mask: var(--mask) center / cover no-repeat;
+    mask: var(--mask) center / cover no-repeat;
+}
+
+.contact a:hover,
+.contact a:focus{
+    background: var(--prim);
+}
+
+.contact a:active {
+    background: var(--sec);
+}
+
+.contact a:first-child {
+    --mask: url("./src/ico/social/gh.svg");
+}
+
+.contact a:nth-child(2) {
+    --mask: url("./src/ico/social/ig.svg");
+}
+
+.contact a:last-child {
+    --mask: url("./src/ico/social/li.svg");
+}
