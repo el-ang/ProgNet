@@ -1,60 +1,34 @@
-# Pemrograman Internet
-Tugas Praktik: PHP Dasar (Variabel, Operator, Kondisi)
+# Repo ProgNet 🌐
+Repositori khusus materi dan penugasan pembelajaran kelas mata kuliah Pemrograman Internet.
 
-## Daftar Tugas
+<details><summary><b>Disusun Oleh</b></summary>El Roy Situmorang (2305551105)<br>[ <a href="https://github.com/el-ang"><b>GH</b></a> / <a href="https://www.instagram.com/el.ang_"><b>IG</b></a> / <a href="https://www.linkedin.com/in/el-ang"><b>LinkedIn</b></a> ]</details>
 
-1. **Form Ucapan**  
-   Input nama → tampilkan ucapan.
-   File: `formUcapan.php`
-   Screenshot:
-   - ![formUcapan0](img/formUcapan0.png)
-   - ![formUcapan1](img/formUcapan1.png)
-   - ![formUcapan2](img/formUcapan2.png)
+**Kelas Mata Kuliah**:<br>24STIE05X021 - Pemrograman internet B
 
-2. **Kalkulator Sederhana**  
-   Input 2 angka, pilih operator (tambah, kurang, kali, bagi) → tampilkan hasil.  
-   File: `kalkulator.php`
-   Screenshot:
-   - ![kalkulator0](img/kalkulator0.png)
-   - ![kalkulator1](img/kalkulator1.png)
-   - ![kalkulator2](img/kalkulator2.png)
-   - ![kalkulator3](img/kalkulator3.png)
-   - ![kalkulator4](img/kalkulator4.png)
+**Dosen Pengampu**:<br>Ir. I Nyoman Piarsa, ST., MT., IPM.
 
-3. **Cek Bilangan Ganjil/Genap**  
-   Input 1 angka → tampilkan keterangan ganjil/genap.  
-   File: `ganjilGenap.php`
-   Screenshot:
-   - ![ganjilGenap0](img/ganjilGenap0.png)
-   - ![ganjilGenap1](img/ganjilGenap1.png)
-   - ![ganjilGenap2](img/ganjilGenap2.png)
-   - ![ganjilGenap3](img/ganjilGenap3.png)
-   - ![ganjilGenap4](img/ganjilGenap4.png)
+## Daftar Isi
+- [Daftar Isi](#daftar-isi)
+- <details><summary><a href="#php-dasar">PHP Dasar</a></summary><ul><li><a href="#form-greetin">Form Greeting</a></li><li><a href="#kalkulator-sederhana">Kalkulator Sederhana</a></li><li><a href="#ganjil---genap">Ganjil - Genap</a></li><li><a href="#nilai-huruf">Nilai Huruf</a></li><li><a href="#form-biodata">Form Biodata</a></li></ul></details>
+- [Web Dev](#web-dev)
+- [Tribute](#tribute)
+    - [License](LICENSE)
 
-4. **Menentukan Nilai Huruf**  
-   Input nilai (0–100) → tampilkan grade (A–E).  
-   File: `nilaiHuruf.php`
-   Screenshot:
-   - ![nilaiHuruf0](img/nilaiHuruf0.png)
-   - ![nilaiHuruf1](img/nilaiHuruf1.png)
-   - ![nilaiHuruf2](img/nilaiHuruf2.png)
-   - ![nilaiHuruf3](img/nilaiHuruf3.png)
-   - ![nilaiHuruf4](img/nilaiHuruf4.png)
+## PHP Dasar
 
-5. **Menu Makanan (Switch Case)**  
-   Pilih makanan → tampilkan harga.  
-   File: `menuMakan.php`
-   Screenshot:
-   - ![menuMakan0](img/menuMakan0.png)
-   - ![menuMakan1](img/menuMakan1.png)
-   - ![menuMakan2](img/menuMakan2.png)
-   - ![menuMakan3](img/menuMakan3.png)
-   - ![menuMakan4](img/menuMakan4.png)
+### Form Greeting
 
-6. **Form Biodata Singkat**  
-   Input nama, umur, jenis kelamin, alamat → tampilkan biodata dalam kalimat.  
-   File: `formBio.php`
-   Screenshot:
-   - ![formBio0](img/formBio0.png)
-   - ![formBio1](img/formBio1.png)
-   - ![formBio2](img/formBio2.png)
+### Kalkulator Sederhana
+
+### Ganjil - Genap
+
+### Nilai Huruf
+
+### Form Biodata
+
+## Web Dev
+
+## Tribute
+[**© 2025 El Roy Situmorang**](LICENSE)
+
+<sup><b>PROGRAM STUDI SARJANA TEKNOLOGI INFORMASI<br>FAKULTAS TEKNIK<br>UNIVERSITAS UDAYANA<br>GANJIL 2025/2026</b></sup>
