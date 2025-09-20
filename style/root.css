@@ -1,0 +1,51 @@
+:root {
+    --bg: #080808;
+    --shd: #0f0f0f;
+    --prim: #ff3636;
+    --sec: #6424ff;
+    --txt: #fff;
+    --sub: #888;
+}
+
+@font-face {
+    font-family: "Space Mono";
+    src: url("../src/font/SpaceMono-Regular.woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Space Mono";
+    src: url("../src/font/SpaceMono-Italic.woff2");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Space Mono";
+    src: url("../src/font/SpaceMono-Bold.woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Space Mono";
+    src: url("../src/font/SpaceMono-BoldItalic.woff2");
+    font-weight: bold;
+    font-style: italic;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Mono", monospace;
+    color: var(--txt);
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+
+html {
+    background-color: var(--bg);
+    overflow-x: hidden;
+}

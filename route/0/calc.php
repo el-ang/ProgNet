@@ -1,39 +1,43 @@
 <?php
-$result = "";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $a = (float)$_POST['angka1'];
-    $b = (float)$_POST['angka2'];
-    $op = $_POST['operator'];
-
-    switch ($op) {
-        case 'tambah': $result = $a + $b; break;
-        case 'kurang': $result = $a - $b; break;
-        case 'kali':   $result = $a * $b; break;
-        case 'bagi':   $result = $b != 0 ? $a / $b : "Error: Pembagi 0"; break;
-        default: $result = "Operator tidak valid";
-    }
-}
+    $c = 0;
 ?>
 <!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><title>Kalkulator</title></head>
-<body style="font-family:sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh;background:#eef2f7;">
-    <div style="background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.1);width:320px;text-align:center;">
-        <h2>Kalkulator</h2>
-        <form method="post">
-            <input type="number" step="any" name="angka1" placeholder="Angka 1" required style="padding:10px;width:100%;margin:5px 0;border-radius:5px;border:1px solid #ccc;">
-            <input type="number" step="any" name="angka2" placeholder="Angka 2" required style="padding:10px;width:100%;margin:5px 0;border-radius:5px;border:1px solid #ccc;">
-            <select name="operator" style="padding:10px;width:100%;margin:5px 0;border-radius:5px;border:1px solid #ccc;">
-                <option value="tambah">+</option>
-                <option value="kurang">-</option>
-                <option value="kali">×</option>
-                <option value="bagi">÷</option>
-            </select>
-            <button type="submit" style="padding:10px 20px;background:#2196F3;color:white;border:none;border-radius:5px;cursor:pointer;margin-top:10px;">Hitung</button>
-        </form>
-        <?php if ($result !== ""): ?>
-            <p style="margin-top:15px;">Hasil: <b><?= $result ?></b></p>
-        <?php endif; ?>
-    </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+    <link rel="stylesheet" href="../../style/root.css">
+    <link rel="stylesheet" href="../../style/form.css">
+    <link rel="shortcut icon" href="../../src/ico/ui/web.svg" type="image/x-icon">
+</head>
+<body>
+    <form action="." method="post">
+        <h4>Kalkulator Sederhana</h4>
+        <div class="calc">
+            <div class="display">
+                <p class="prev"><?= $a ?> <?= $op ?> <?= $b ?></p>
+                <p class="curr"><?= $c ?></p>
+            </div>
+            <div class="key">
+                <div class="num">
+                    <button id="0">0</button>
+                    <button id="1">1</button>
+                    <button id="2">2</button>
+                    <button id="3">3</button>
+                    <button id="4">4</button>
+                    <button id="5">5</button>
+                    <button id="6">6</button>
+                    <button id="7">7</button>
+                    <button id="8">8</button>
+                    <button id="9">9</button>
+                </div>
+                <div class="op">
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <a href="../../" class="back">&larr; Kembali ke Beranda</a>
 </body>
 </html>

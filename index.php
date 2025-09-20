@@ -4,8 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Pemrograman Internet</title>
-        <link rel="stylesheet" href="./style.css">
-        <link rel="shortcut icon" href="./src/ico/stack/web.svg" type="image/x-icon">
+        <link rel="stylesheet" href="./style/root.css">
+        <link rel="stylesheet" href="./style/home.css">
+        <link rel="stylesheet" href="./style/page.css">
+        <link rel="stylesheet" href="./style/foot.css">
+        <link rel="shortcut icon" href="./src/ico/ui/web.svg" type="image/x-icon">
     </head>
     <body>
         <header class="hero">
@@ -15,7 +18,7 @@
             </h1>
             <div class="detail">
                 <p>Repositori khusus materi dan penugasan pembelajaran kelas mata kuliah Pemrograman Internet.</p>
-                <a href="https://github.com/el-ang/ProgNet">GitHub Repo</a>
+                <a href="https://github.com/el-ang/ProgNet">Lihat di GitHub &rarr;</a>
             </div>
         </header>
         <main class="repo">
@@ -31,7 +34,7 @@
                             "Menu Makanan" => "foodMenu",
                             "Form Biodata" => "formBio"
                         ],
-                        "Looping & Array" => [
+                        "Loop & Array" => [
                             "Daftar Barang" => "itemList",
                             "Daftar Mahasiswa" => "studentList",
                             "Daftar Harga" => "priceList",

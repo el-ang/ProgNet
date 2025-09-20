@@ -1,0 +1,109 @@
+footer {
+    width: 100vw;
+    padding: 3rem 5vw 2rem 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+footer::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--shd);
+    --mask: url("../src/svg/foot-sock.svg") center / cover no-repeat;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    z-index: -1;
+}
+
+.copy {
+    display: flex;
+}
+
+.copy * {
+    transition: all .2s ease-out;
+    display: inline-block;
+    color: var(--sub);
+}
+
+.copy p:first-child {
+    width: 5.5rem;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+}
+
+.copy p:last-child {
+    width: 1.9rem;
+    direction: rtl;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+}
+
+.copy:hover *,
+.copy:focus *{
+    color: var(--prim);
+}
+
+.copy:active * {
+    color: var(--txt);
+}
+
+.copy:hover p:first-child,
+.copy:focus p:first-child,
+.copy:active p:first-child {
+    width: 8rem;
+}
+
+.copy:hover p:nth-child(2),
+.copy:focus p:nth-child(2),
+.copy:active p:nth-child(2) {
+    opacity: 0;
+}
+
+.copy:hover p:last-child,
+.copy:focus p:last-child,
+.copy:active p:last-child {
+    width: 6.2rem;
+}
+
+.contact {
+    display: flex;
+    gap: max(4vw, 4vh);
+}
+
+.contact a {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: all .2s;
+    background: var(--sub);
+    -webkit-mask: var(--mask) center / cover no-repeat;
+    mask: var(--mask) center / cover no-repeat;
+}
+
+.contact a:hover,
+.contact a:focus{
+    background: var(--prim);
+}
+
+.contact a:active {
+    background: var(--sec);
+}
+
+.contact a:first-child {
+    --mask: url("../src/ico/social/gh.svg");
+}
+
+.contact a:nth-child(2) {
+    --mask: url("../src/ico/social/ig.svg");
+}
+
+.contact a:last-child {
+    --mask: url("../src/ico/social/li.svg");
+}

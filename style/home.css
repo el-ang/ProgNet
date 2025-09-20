@@ -1,0 +1,292 @@
+.hero {
+    width: 100%;
+    height: 90vh;
+    margin-bottom: 10vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero::before {
+    width: 100%;
+    height: 80vh;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--prim);
+    --mask: url("../src/svg/hero-mask.svg") center / cover no-repeat;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    z-index: -1;
+}
+
+.hero::after {
+    content: "";
+    width: 60%;
+    height: min(60vw, 80vh);
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+}
+
+/*
+.hero.pc::after {
+    background: url("../src/img/mockup/Apple\ Pro\ Display\ XDR.png") center bottom / contain no-repeat;
+}
+
+.hero.pc>p {
+    width: min(90vw, 80vh);
+    transition: all .5s;
+    margin-bottom: calc(15vh + calc(1vh / 1vw) * 20vh);
+}
+
+.hero.pc>p::before {
+    content: "";
+    width: auto;
+    height: min(36vw, 58vh);
+    aspect-ratio: 16 / 9;
+    background: var(--sec);
+    position: absolute;
+    bottom: min(12.5vw, 20vh);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.hero.pc>p::after {
+    bottom: calc(27vh - calc(1vh / 1vw) * 4.5vh);
+    opacity: round(calc(5vh / 8vw), 1);
+} */
+
+h1 {
+    position: relative;
+}
+
+h1::before,
+h1 p:first-child:before,
+h1 p:first-child:after {
+    content: "";
+    width: 6vw;
+    height: 6vw;
+    position: absolute;
+    top: 12%;
+    left: 37%;
+    border-radius: 50%;
+    border: .5vw solid var(--txt);
+}
+
+h1 p:first-child {
+    font-size: 13vw;
+}
+
+h1 p:last-child {
+    font-size: 10vw;
+}
+
+@keyframes spin0 {
+    from {
+        width: 6vw;
+        left: 37%;
+    }
+    50% {
+        width: 0.001vw;
+        left: 40.45%;
+    }
+    to {
+        width: 6vw;
+        left: 37%;
+    }
+}
+
+h1 p:first-child::before {
+    animation: spin0 3s linear infinite;
+}
+
+@keyframes spin1 {
+    from {
+        width: 0.001vw;
+        left: 40.45%;
+    }
+    50% {
+        width: 6vw;
+        left: 37%;
+    }
+    to {
+        width: 0.001vw;
+        left: 40.45%;
+    }
+}
+
+h1 p:first-child::after {
+    animation: spin1 3s linear infinite;
+}
+
+h1 p:last-child::before,
+h1 p:last-child::after {
+    content: "";
+    width: 6vw;
+    height: .5vw;
+    position: absolute;
+    left: 37.5%;
+    background: var(--txt);
+}
+
+h1 p:last-child::before {
+    top: 21%;
+}
+
+h1 p:last-child::after {
+    top: 29.5%;
+}
+
+h1 * {
+    margin-top: -5vw;
+}
+
+.detail {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.detail p {
+    width: 80vw;
+}
+
+.detail a {
+    --col: var(--shd);
+    padding: .5rem;
+    padding-left: 2.5rem;
+    display: inline-block;
+    background: var(--sec);
+    color: var(--col);
+    font-weight: bold;
+    border-radius: .75rem;
+    position: relative;
+    border: 2px solid var(--col);
+    z-index: 2;
+    transition:
+        background-color .2s,
+        color .2s,
+        border-color .2s;
+}
+
+.detail a::after {
+    content: "";
+    background: var(--col);
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 50%;
+    left: .5rem;
+    transform: translateY(-50%);
+    --mask: url("../src/ico/social/gh.svg") center / cover no-repeat;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    transition: background-color .2s;
+}
+
+.detail a:hover,
+.detail a:focus {
+    --col: var(--sec);
+    background: var(--shd);
+}
+
+.detail a:active {
+    --col: var(--txt);
+    background: var(--sub);
+}
+
+.card::after, .card h4::before, .card h4::after {
+    content: "";
+    width: 2rem;
+    height: 2rem;
+    right: 1rem;
+    position: absolute;
+    background: var(--card, var(--sub));
+    --mask: var(--label, var(--chip)) center / cover no-repeat;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}
+
+.card::after {
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+    background: linear-gradient(45deg, var(--card), var(--sub));
+}
+
+.card:nth-child(odd) {
+    --card: var(--prim);
+}
+
+.card:nth-child(even) {
+    --card: var(--sec);
+}
+
+.task:first-of-type .card:first-child {
+    --chip: url("../src/ico/ui/msg.svg");
+}
+
+.task:first-of-type .card:nth-child(2) {
+    --chip: url("../src/ico/ui/calc.svg");
+}
+
+.task:first-of-type .card:nth-child(3) {
+    --chip: url("../src/ico/ui/num.svg");
+}
+
+.task:first-of-type .card:nth-child(4) {
+    --chip: url("../src/ico/ui/abc.svg");
+}
+
+.task:first-of-type .card:nth-child(5) {
+    --chip: url("../src/ico/ui/food.svg");
+}
+
+.task:first-of-type .card:last-child {
+    --chip: url("../src/ico/ui/bio.svg");
+}
+
+.task:last-of-type .card:first-child {
+    --chip: url("../src/ico/ui/list.svg");
+}
+
+.task:last-of-type .card:nth-child(2) {
+    --chip: url("../src/ico/ui/nerd.svg");
+}
+
+.task:last-of-type .card:nth-child(3) {
+    --chip: url("../src/ico/ui/tag.svg");
+}
+
+.task:last-of-type .card:nth-child(4) {
+    --chip: url("../src/ico/ui/even.svg");
+}
+
+.task:last-of-type .card:nth-child(5) {
+    --chip: url("../src/ico/ui/data.svg");
+}
+
+.task:last-of-type .card:last-child {
+    --chip: url("../src/ico/ui/scobo.svg");
+}
+
+.card * {
+    color: var(--card);
+}
+
+.card h4::before {
+    top: 1rem;
+    --label: url("../src/ico/ui/web.svg");
+}
+
+.card h4::after {
+    bottom: 1rem;
+    --label: url("../src/ico/stack/php.svg");
+}
