@@ -45,7 +45,19 @@
     text-decoration: none;
 }
 
+html, body {
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
 html {
     background-color: var(--bg);
+}
+
+body {
     overflow-x: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }

@@ -1,23 +1,30 @@
-<?php
-$hasil = "";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $angka = (int)$_POST['angka'];
-    $hasil = ($angka % 2 == 0) ? "Genap" : "Ganjil";
-}
-?>
 <!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><title>Cek Ganjil Genap</title></head>
-<body style="font-family:sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh;background:#fafafa;">
-    <div style="background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.1);width:300px;text-align:center;">
-        <h2>Cek Ganjil / Genap</h2>
-        <form method="post">
-            <input type="number" name="angka" placeholder="Masukkan Angka" required style="padding:10px;width:100%;margin:10px 0;border-radius:5px;border:1px solid #ccc;">
-            <button type="submit" style="padding:10px 20px;background:#FF5722;color:white;border:none;border-radius:5px;cursor:pointer;">Cek</button>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ganjil/Genap</title>
+        <link rel="stylesheet" href="../../style/root.css">
+        <link rel="stylesheet" href="../../style/form.css">
+        <link rel="shortcut icon" href="../../src/ico/ui/web.svg" type="image/x-icon">
+    </head>
+    <body>
+        <form action="./evenOdd.php" method="post">
+            <h4>Ganjil/Genap</h4>
+            <input type="number" name="n" placeholder="Masukkan bilangan" required>
+            <button type="submit">Hitung</button>
         </form>
-        <?php if ($hasil): ?>
-            <p style="margin-top:15px;">Angka tersebut adalah: <b><?= $hasil ?></b></p>
-        <?php endif; ?>
-    </div>
-</body>
+        <a href="../../" class="back">&larr; Kembali</a>
+        <?php if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST["n"])) { ?>
+            <div id="pop">
+                <p><?= ($n = $_POST["n"]) . " adalah bilangan&nbsp;<b>" . ($n % 2 === 0 ? "genap" : "ganjil") . "</b>." ?></p>
+            </div>
+            <script>
+                const overlay = document.getElementById("pop");
+                overlay.addEventListener("click", e => {
+                    if (e.target === overlay) overlay.remove();
+                });
+            </script>
+        <?php } ?>
+    </body>
 </html>

@@ -1,0 +1,131 @@
+.calc {
+    width: 20rem;
+    flex-flow: column nowrap;
+}
+
+.calc, .calc * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.display {
+    width: 100%;
+    padding: .5rem 1rem;
+    background: var(--bg);
+    border: 1px solid var(--sub);
+    flex-flow: column nowrap;
+    text-align: right;
+    border-radius: .5rem;
+}
+
+.prev {
+    min-width: 1px;
+    min-height: 1.5rem;
+    font-size: 1rem;
+    color: var(--sub);
+}
+
+.curr {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.key button{
+    border: 1px solid;
+}
+
+.num {
+    width: 60%;
+    flex-flow: row wrap-reverse;
+}
+
+.num button {
+    width: calc(calc(100% - 1rem) / 3);
+    background: var(--shd);
+    color: var(--txt);
+    border-color: var(--sub);
+}
+
+.num [data-val="±"],
+.num [data-val="."] {
+    border-color: var(--prim);
+}
+
+.num button:hover,
+.num button:focus {
+    border-color: var(--txt);
+    background: var(--bg);
+    color: var(--prim);
+}
+
+.op {
+    width: 40%;
+    flex-flow: row wrap;
+}
+
+.op button {
+    width: calc((100% - 1rem) / 2);
+    border-color: var(--prim);
+    background: var(--bg);
+    color: var(--txt);
+}
+
+.op [data-val="="],
+.op [data-val="A"] {
+    background: var(--prim);
+    color: var(--bg);
+    font-weight: bold;
+}
+
+.op button:hover,
+.op button:focus {
+    border-color: var(--txt);
+}
+
+.op [data-val="="]:hover,
+.op [data-val="="]:focus,
+.op [data-val="A"]:hover,
+.op [data-val="A"]:focus {
+    border-color: var(--bg);
+    background: var(--sec);
+}
+
+.op [data-val="="]:active,
+.op [data-val="A"]:active {
+    background: var(--txt);
+    color: var(--bg);
+}
+
+.op [data-val="C"],
+.op [data-val="E"] {
+    border-color: var(--sec);
+}
+
+.num [data-val="±"]:hover,
+.num [data-val="±"]:focus,
+.num [data-val="."]:hover,
+.num [data-val="."]:focus,
+.op [data-val="C"]:hover,
+.op [data-val="C"]:focus,
+.op [data-val="E"]:hover,
+.op [data-val="E"]:focus {
+    border-color: var(--txt);
+    color: var(--sec);
+}
+
+.num button:active,
+.op button:active {
+    border-color: var(--bg);
+    background: var(--sub);
+    color: var(--prim);
+}
+
+.num [data-val="±"]:active,
+.num [data-val="."]:active,
+.op [data-val="C"]:active,
+.op [data-val="E"]:active {
+    border-color: var(--bg);
+    color: var(--sec);
+}

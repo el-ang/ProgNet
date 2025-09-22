@@ -1,27 +1,46 @@
-<?php
-$grade = "";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nilai = (int)$_POST['nilai'];
-    if ($nilai >= 85) $grade = "A";
-    elseif ($nilai >= 70) $grade = "B";
-    elseif ($nilai >= 55) $grade = "C";
-    elseif ($nilai >= 40) $grade = "D";
-    else $grade = "E";
-}
-?>
 <!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><title>Penilaian</title></head>
-<body style="font-family:sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh;background:#f0f8ff;">
-    <div style="background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.1);width:300px;text-align:center;">
-        <h2>Cek Nilai</h2>
-        <form method="post">
-            <input type="number" name="nilai" min="0" max="100" placeholder="Masukkan Nilai" required style="padding:10px;width:100%;margin:10px 0;border-radius:5px;border:1px solid #ccc;">
-            <button type="submit" style="padding:10px 20px;background:#9C27B0;color:white;border:none;border-radius:5px;cursor:pointer;">Cek</button>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nilai Huruf</title>
+        <link rel="stylesheet" href="../../style/root.css">
+        <link rel="stylesheet" href="../../style/form.css">
+        <link rel="shortcut icon" href="../../src/ico/ui/web.svg" type="image/x-icon">
+    </head>
+    <body>
+        <form action="./grade.php" method="post">
+            <h4>Nilai Huruf</h4>
+            <input type="number" name="n" placeholder="Masukkan hilai" required>
+            <button type="submit">Hitung</button>
         </form>
-        <?php if ($grade): ?>
-            <p style="margin-top:15px;">Grade Anda: <b><?= $grade ?></b></p>
-        <?php endif; ?>
-    </div>
-</body>
+        <a href="../../" class="back">&larr; Kembali</a>
+        <?php
+            if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST["n"])) {
+                $n = $_POST["n"];
+                if ($n >= 85 && $n <= 100) {
+                    $grade = "A";
+                } else if ($n >= 70) {
+                    $grade = "B";
+                } else if ($n >= 55) {
+                    $grade = "C";
+                } else if ($n >= 40) {
+                    $grade = "D";
+                } else if ($n >= 0) {
+                    $grade = "E";
+                } else {
+                    $grade = "tidak valid";
+                }
+        ?>
+            <div id="pop">
+                <p><?= "Skor anda ${n}. Nilai anda&nbsp;<b>${grade}</b>." ?></p>
+            </div>
+            <script>
+                const overlay = document.getElementById("pop");
+                overlay.addEventListener("click", e => {
+                    if (e.target === overlay) overlay.remove();
+                });
+            </script>
+        <?php } ?>
+    </body>
 </html>

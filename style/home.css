@@ -168,7 +168,7 @@ h1 * {
     font-weight: bold;
     border-radius: .75rem;
     position: relative;
-    border: 2px solid var(--col);
+    border: 1px solid var(--col);
     z-index: 2;
     transition:
         background-color .2s,

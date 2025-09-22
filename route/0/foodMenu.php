@@ -1,32 +1,47 @@
-<?php
-$harga = "";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $menu = $_POST['menu'];
-    switch ($menu) {
-        case 'nasi_goreng': $harga = "Rp20.000"; break;
-        case 'soto': $harga = "Rp18.000"; break;
-        case 'mie_ayam': $harga = "Rp15.000"; break;
-        default: $harga = "Menu tidak tersedia";
-    }
-}
-?>
 <!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><title>Menu Makanan</title></head>
-<body style="font-family:sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh;background:#fff3e0;">
-    <div style="background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.1);width:320px;text-align:center;">
-        <h2>Pilih Menu</h2>
-        <form method="post">
-            <select name="menu" style="padding:10px;width:100%;margin:10px 0;border-radius:5px;border:1px solid #ccc;">
-                <option value="nasi_goreng">Nasi Goreng</option>
-                <option value="soto">Soto</option>
-                <option value="mie_ayam">Mie Ayam</option>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menu Makan</title>
+        <link rel="stylesheet" href="../../style/root.css">
+        <link rel="stylesheet" href="../../style/form.css">
+        <link rel="stylesheet" href="../../style/food.css">
+        <link rel="shortcut icon" href="../../src/ico/ui/web.svg" type="image/x-icon">
+    </head>
+    <body>
+        <form action="./foodMenu.php" method="post">
+            <h4>Menu Makan</h4>
+            <select name="menu">
+                <option disabled selected hidden>Pilih menu</option>
+                <option value="nasgor">Nasi Goreng Jakarta</option>
+                <option value="soto">Soto Sapi Malang</option>
+                <option value="mie">Mie Ayam Medan</option>
             </select>
-            <button type="submit" style="padding:10px 20px;background:#FF9800;color:white;border:none;border-radius:5px;cursor:pointer;">Lihat Harga</button>
+            <button type="submit">Cek Harga</button>
         </form>
-        <?php if ($harga): ?>
-            <p style="margin-top:15px;">Harga: <b><?= $harga ?></b></p>
-        <?php endif; ?>
-    </div>
-</body>
+        <a href="../../" class="back">&larr; Kembali</a>
+        <?php
+            if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST["menu"])) {
+                switch ($menu = $_POST["menu"]) {
+                    case "nasgor": $menu = "Nasi Goreng Jakarta"; $p = 12000; break;
+                    case "soto": $menu = "Soto Sapi Malang"; $p = 10000; break;
+                    case "mie": $menu = "Mie Ayam Medan"; $p = 15000; break;
+                    default: $p = 0;
+                }
+        ?>
+            <div id="pop">
+                <div class="food">
+                    <h5 class="<?= $_POST["menu"] ?>"><?= $menu ?></h5>
+                    <p><b>Harga</b>: Rp. <?= number_format($p, 0, ",", ".") ?></p>
+                </div>
+            </div>
+            <script>
+                const overlay = document.getElementById("pop");
+                overlay.addEventListener("click", e => {
+                    if (e.target === overlay) overlay.remove();
+                });
+            </script>
+        <?php } ?>
+    </body>
 </html>

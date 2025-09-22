@@ -22,9 +22,8 @@ h2::before {
 }
 
 h3 {
-    color: var(--sec);
+    color: var(--txt);
     font-size: 2rem;
-    transform: rotateZ(-2deg);
     text-align: center;
 }
 
@@ -33,8 +32,15 @@ section, .task {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
     padding-bottom: 4rem;
+}
+
+section {
+    gap: .5rem;
+}
+
+.task {
+    gap: 2rem;
 }
 
 section>*:not(:last-child) {
