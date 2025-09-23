@@ -1,7 +1,7 @@
 .hero {
     width: 100%;
     height: 90vh;
-    margin-bottom: 10vh;
+    margin-bottom: 5vh;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -202,7 +202,9 @@ h1 * {
     background: var(--sub);
 }
 
-.card::after, .card h4::before, .card h4::after {
+.card::after,
+.card h4::before,
+.card h4::after {
     content: "";
     width: 2rem;
     height: 2rem;

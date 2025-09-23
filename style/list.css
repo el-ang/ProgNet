@@ -1,0 +1,31 @@
+main {
+    max-width: min(80vw, 80vh);
+    padding: 2rem;
+    background: var(--shd);
+    border: 2px solid var(--bg);
+    outline: 2px solid var(--prim);
+    border-radius: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+main h4 {
+    text-align: center;
+    color: var(--prim);
+    font-size: 2rem;
+}
+
+ul, ol {
+    padding-left: 2rem;
+}
+
+ol {
+    list-style: none;
+}
+
+ol li::marker {
+    content: "[" attr(value) "] ";
+}

@@ -6,7 +6,7 @@
         <title>Ganjil/Genap</title>
         <link rel="stylesheet" href="../../style/root.css">
         <link rel="stylesheet" href="../../style/form.css">
-        <link rel="shortcut icon" href="../../src/ico/ui/web.svg" type="image/x-icon">
+        <link rel="shortcut icon" href="../../src/ico/stack/web.svg" type="image/x-icon">
     </head>
     <body>
         <form action="./evenOdd.php" method="post">

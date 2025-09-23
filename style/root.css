@@ -55,9 +55,25 @@ html {
 }
 
 body {
+    padding: 0 .5rem;
     overflow-x: hidden;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
+}
+
+a {
+    color: var(--sec);
+    text-align: center;
+}
+
+a:hover,
+a:focus {
+    color: var(--sub);
+}
+
+a:active {
+    color: var(--txt);
 }

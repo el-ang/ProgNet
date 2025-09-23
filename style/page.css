@@ -58,17 +58,21 @@ section>*:not(:last-child) {
 .card {
     width: 20rem;
     padding: 2rem;
+    margin: 4rem -9rem;
     aspect-ratio: 3.25 / 2.1;
     position: relative;
     display: flex;
     flex-flow: column nowrap;
     justify-content: end;
-    background: var(--shd);
+    text-align: unset !important;
     border-radius: 1rem;
-    border: 2px solid var(--card, var(--sub));
-    transition: all .5s ease-out;
+    outline: 2px solid var(--card, var(--sub));
+    border: 2px solid var(--bg);
     transform: rotateZ(60deg);
-    margin: 4rem -9rem;
+    transition: all .5s ease-out;
+    background: linear-gradient(45deg, var(--shd), #222, var(--bg));
+    background-size: 200% 200%;
+    background-position: 100% 0%;
 }
 
 .card:hover,
@@ -76,24 +80,5 @@ section>*:not(:last-child) {
 .card:focus {
     transform: rotateZ(80deg);
     margin: 0 -1rem 2rem -5rem;
-}
-
-.card::before {
-    content: "";
-    width: 98%;
-    height: 96%;
-    position: absolute;
-    top: 2%;
-    left: 1%;
-    border-radius: .5rem;
-    transition: all .5s ease-out;
-    background: linear-gradient(45deg, #0000, #4444, #0000);
-    background-size: 200% 200%;
-    background-position: 100% 0%;
-}
-
-.card:hover::before,
-.card:active::before,
-.card:focus::before {
     background-position: 0% 100%;
 }

@@ -6,12 +6,12 @@
         <title>Nilai Huruf</title>
         <link rel="stylesheet" href="../../style/root.css">
         <link rel="stylesheet" href="../../style/form.css">
-        <link rel="shortcut icon" href="../../src/ico/ui/web.svg" type="image/x-icon">
+        <link rel="shortcut icon" href="../../src/ico/stack/web.svg" type="image/x-icon">
     </head>
     <body>
         <form action="./grade.php" method="post">
             <h4>Nilai Huruf</h4>
-            <input type="number" name="n" placeholder="Masukkan hilai" required>
+            <input type="number" name="n" placeholder="Masukkan nilai" required>
             <button type="submit">Hitung</button>
         </form>
         <a href="../../" class="back">&larr; Kembali</a>

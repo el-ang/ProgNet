@@ -1,0 +1,39 @@
+main {
+    width: max-content;
+    padding: 2rem;
+    background: var(--shd);
+    border: 2px solid var(--bg);
+    outline: 2px solid var(--prim);
+    border-radius: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+main h4 {
+    text-align: center;
+    color: var(--prim);
+    font-size: 2rem;
+}
+
+table {
+    border: 2px solid var(--sec);
+    border-radius: .5rem;
+}
+
+tr, tr *:not(a) {
+    border: 1px solid var(--sub);
+    border-radius: .25rem;
+}
+
+tr *:not(a) {
+    padding: .5rem 1rem;
+}
+
+th {
+    background: var(--bg);
+    border-color: var(--sec) !important;
+    color: var(--sec);
+}

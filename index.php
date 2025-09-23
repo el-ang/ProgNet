@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="./style/home.css">
         <link rel="stylesheet" href="./style/page.css">
         <link rel="stylesheet" href="./style/foot.css">
-        <link rel="shortcut icon" href="./src/ico/ui/web.svg" type="image/x-icon">
+        <link rel="shortcut icon" href="./src/ico/stack/web.svg" type="image/x-icon">
     </head>
     <body>
         <header class="hero">
@@ -21,7 +21,7 @@
                 <a href="https://github.com/el-ang/ProgNet">Lihat di GitHub &rarr;</a>
             </div>
         </header>
-        <main class="repo">
+        <main id="repo">
             <section class="basic">
                 <h2>PHP Dasar</h2>
                 <?php
@@ -38,7 +38,7 @@
                             "Daftar Barang" => "itemList",
                             "Daftar Mahasiswa" => "studentList",
                             "Daftar Harga" => "priceList",
-                            "Bilangan Genap" => "even",
+                            "Baris Genap" => "even",
                             "Data Mahasiswa" => "studentData",
                             "Nilai Mahasiswa" => "studentScore"
                         ],
@@ -55,7 +55,7 @@
                             ?>
                                 <a href="./route/<?= $j ?>/<?= $file ?>.php" class="card">
                                     <h4><?= $title ?></h4>
-                                    <p><?= str_pad($i, 2, '0', STR_PAD_LEFT) ?>/<?= str_pad(count($card), 2, '0', STR_PAD_LEFT) ?> - <?= str_pad($j, 2, '0', STR_PAD_LEFT) ?>/<?= str_pad(count($material), 2, '0', STR_PAD_LEFT) ?></p>
+                                    <p><?= str_pad($i, 2, '0', STR_PAD_LEFT) ?>/<?= str_pad(count($card), 2, '0', STR_PAD_LEFT) ?> - <?= str_pad($j + 1, 2, '0', STR_PAD_LEFT) ?>/<?= str_pad(count($material), 2, '0', STR_PAD_LEFT) ?></p>
                                 </a>
                             <?php
                                     $i++;
