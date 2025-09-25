@@ -4,9 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Nilai Huruf</title>
-        <link rel="stylesheet" href="../../style/root.css">
-        <link rel="stylesheet" href="../../style/form.css">
-        <link rel="shortcut icon" href="../../src/ico/stack/web.svg" type="image/x-icon">
+        <link rel="stylesheet" href="../../assets/style/root.css">
+        <link rel="stylesheet" href="../../assets/style/form.css">
+        <link rel="shortcut icon" href="../../assets/ico/stack/web.svg" type="image/x-icon">
     </head>
     <body>
         <form action="./grade.php" method="post">
@@ -33,7 +33,7 @@
                 }
         ?>
             <div id="pop">
-                <p><?= "Skor anda ${n}. Nilai anda&nbsp;<b>${grade}</b>." ?></p>
+                <p>Skor anda <?= $n ?>. Nilai anda&nbsp;<b><?= $grade ?></b></p>
             </div>
             <script>
                 const overlay = document.getElementById("pop");

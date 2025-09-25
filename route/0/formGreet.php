@@ -4,9 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Form Ucapan</title>
-        <link rel="stylesheet" href="../../style/root.css">
-        <link rel="stylesheet" href="../../style/form.css">
-        <link rel="shortcut icon" href="../../src/ico/stack/web.svg" type="image/x-icon">
+        <link rel="stylesheet" href="../../assets/style/root.css">
+        <link rel="stylesheet" href="../../assets/style/form.css">
+        <link rel="shortcut icon" href="../../assets/ico/stack/web.svg" type="image/x-icon">
     </head>
     <body>
         <form action="./formGreet.php" method="post">
@@ -17,7 +17,7 @@
         <a href="../../" class="back">&larr; Kembali</a>
         <?php if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST["nama"])) { ?>
             <div id="pop">
-                <p><?= "Halo " . htmlspecialchars($_POST["nama"]) . "! Selamat belajar PHP!" ?></p>
+                <p>Halo&nbsp;<b><?= $_POST["nama"] ?></b>! Selamat belajar PHP!</p>
             </div>
             <script>
                 const overlay = document.getElementById("pop");

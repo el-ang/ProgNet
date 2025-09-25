@@ -1,0 +1,170 @@
+form, #pop>p {
+    max-width: min(80vw, 80vh);
+    padding: 2rem;
+    background: var(--shd);
+    border: 2px solid var(--bg);
+    outline: 2px solid var(--prim);
+    border-radius: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: .5rem;
+}
+
+#pop>p {
+    outline-color: var(--sec);
+    flex-flow: row wrap;
+    gap: 0;
+}
+
+form h4 {
+    color: var(--prim);
+    font-size: 2rem;
+}
+
+form>* {
+    width: 100%;
+}
+
+select, input, textarea {
+    width: 100%;
+    padding: .5rem;
+    outline: none;
+    border: none;
+    position: relative;
+    border-bottom: 1px solid var(--sub);
+    background: var(--bg);
+    color: var(--txt);
+    transition:
+        border-bottom .2s ease-in-out,
+        color .2s ease-in-out;
+}
+
+select:invalid,
+option:disabled,
+input::placeholder,
+textarea::placeholder {
+    color: var(--sub);
+}
+
+select:hover,
+select:focus,
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus {
+    border-bottom: 2px solid var(--sec);
+}
+
+select:open {
+    border-bottom: 2px solid var(--txt);
+    color: var(--sub);
+}
+
+select::picker-icon {
+    content: "≣"; /* burger */
+    width: 1rem;
+    aspect-ratio: 1 / 1;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: .5rem;
+    top: .5rem;
+    transition: all .2s ease-in-out;
+}
+
+select:open::picker-icon {
+    content: "⨉";
+    transform: rotate(-90deg);
+}
+
+select,
+::picker(select) {
+    font-size: small;
+    border-radius: 0;
+    appearance: base-select;
+    cursor: pointer;
+}
+
+::picker(select) {
+    margin-top: .5rem;
+    border-radius: .25rem;
+    outline: 1px solid var(--sec);
+    border: 1px solid var(--bg);
+    background: var(--shd);
+    color: var(--txt);
+}
+
+option {
+    padding: .5rem;
+    outline: none;
+    background: none;
+    color: var(--txt);
+    cursor: pointer;
+}
+
+option:hover {
+    background: var(--sub);
+    color: var(--bg);
+}
+
+option:focus {
+    border-radius: .25rem;
+    border: 1px solid var(--sec);
+    color: var(--sec);
+}
+
+option:active {
+    background: var(--txt);
+    color: var(--bg);
+}
+
+option:checked {
+    background: var(--sec) !important;
+    color: var(--shd);
+    font-weight: bold;
+}
+
+option::checkmark {
+    display: none;
+}
+
+button {
+    min-width: 3rem;
+    padding: .5rem;
+    outline: none;
+    border: none;
+    background: var(--sec);
+    color: var(--bg);
+    border-radius: .5rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover,
+button:focus {
+    background: var(--sub);
+    color: var(--shd);
+}
+
+button:active {
+    background: var(--txt);
+    color: var(--bg);
+}
+
+#pop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #0008;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}

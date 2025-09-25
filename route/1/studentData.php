@@ -3,14 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Daftar Mahasiswa</title>
-        <link rel="stylesheet" href="../../style/root.css">
-        <link rel="stylesheet" href="../../style/table.css">
-        <link rel="shortcut icon" href="../../src/ico/stack/web.svg" type="image/x-icon">
+        <title>Data Mahasiswa</title>
+        <link rel="stylesheet" href="../../assets/style/root.css">
+        <link rel="stylesheet" href="../../assets/style/table.css">
+        <link rel="shortcut icon" href="../../assets/ico/stack/web.svg" type="image/x-icon">
     </head>
     <body>
         <main>
-            <h4>Daftar Mahasiswa</h4>
+            <h4>Data Mahasiswa</h4>
             <table>
                 <tr>
                     <th>NIM</th>

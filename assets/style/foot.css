@@ -15,7 +15,7 @@ footer::before {
     top: 0;
     left: 0;
     background: var(--shd);
-    --mask: url("../src/svg/foot-sock.svg") center / cover no-repeat;
+    --mask: url("../svg/foot-sock.svg") center / cover no-repeat;
     -webkit-mask: var(--mask);
     mask: var(--mask);
     z-index: -1;
@@ -97,13 +97,13 @@ footer::before {
 }
 
 .contact a:first-child {
-    --mask: url("../src/ico/social/gh.svg");
+    --mask: url("../ico/social/gh.svg");
 }
 
 .contact a:nth-child(2) {
-    --mask: url("../src/ico/social/ig.svg");
+    --mask: url("../ico/social/ig.svg");
 }
 
 .contact a:last-child {
-    --mask: url("../src/ico/social/li.svg");
+    --mask: url("../ico/social/li.svg");
 }

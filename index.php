@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-overlayscrollbars-initialize>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Pemrograman Internet</title>
-        <link rel="stylesheet" href="./style/root.css">
-        <link rel="stylesheet" href="./style/home.css">
-        <link rel="stylesheet" href="./style/page.css">
-        <link rel="stylesheet" href="./style/foot.css">
-        <link rel="shortcut icon" href="./src/ico/stack/web.svg" type="image/x-icon">
+        <link rel="stylesheet" href="./assets/style/overlayscrollbars.min.css">
+        <link rel="stylesheet" href="./assets/style/root.css">
+        <link rel="stylesheet" href="./assets/style/home.css">
+        <link rel="stylesheet" href="./assets/style/page.css">
+        <link rel="stylesheet" href="./assets/style/foot.css">
+        <link rel="shortcut icon" href="./assets/ico/stack/web.svg" type="image/x-icon">
+        <script src="./assets/script/lib/overlayscrollbars.browser.es5.min.js" defer></script>
+        <script src="./assets/script/main.js" defer></script>
     </head>
-    <body>
+    <body data-overlayscrollbars-initialize>
         <header class="hero">
             <h1>
                 <p>Pemr graman</p>

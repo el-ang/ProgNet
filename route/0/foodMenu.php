@@ -4,16 +4,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Menu Makan</title>
-        <link rel="stylesheet" href="../../style/root.css">
-        <link rel="stylesheet" href="../../style/form.css">
-        <link rel="stylesheet" href="../../style/food.css">
-        <link rel="shortcut icon" href="../../src/ico/stack/web.svg" type="image/x-icon">
+        <link rel="stylesheet" href="../../assets/style/root.css">
+        <link rel="stylesheet" href="../../assets/style/form.css">
+        <link rel="stylesheet" href="../../assets/style/food.css">
+        <link rel="shortcut icon" href="../../assets/ico/stack/web.svg" type="image/x-icon">
     </head>
     <body>
         <form action="./foodMenu.php" method="post">
             <h4>Menu Makan</h4>
-            <select name="menu">
-                <option disabled selected hidden>Pilih menu</option>
+            <select name="menu" required>
+                <option value="" disabled selected hidden>Pilih menu</option>
                 <option value="nasgor">Nasi Goreng Jakarta</option>
                 <option value="soto">Soto Sapi Malang</option>
                 <option value="mie">Mie Ayam Medan</option>
@@ -25,7 +25,7 @@
             if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST["menu"])) {
                 switch ($menu = $_POST["menu"]) {
                     case "nasgor": $menu = "Nasi Goreng Jakarta"; $p = 12000; break;
-                    case "soto": $menu = "Soto Sapi Malang"; $p = 10000; break;
+                    case "soto": $menu = "Soto Sapi Lamongan"; $p = 10000; break;
                     case "mie": $menu = "Mie Ayam Medan"; $p = 15000; break;
                     default: $p = 0;
                 }

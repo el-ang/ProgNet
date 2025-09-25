@@ -4,9 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ganjil/Genap</title>
-        <link rel="stylesheet" href="../../style/root.css">
-        <link rel="stylesheet" href="../../style/form.css">
-        <link rel="shortcut icon" href="../../src/ico/stack/web.svg" type="image/x-icon">
+        <link rel="stylesheet" href="../../assets/style/root.css">
+        <link rel="stylesheet" href="../../assets/style/form.css">
+        <link rel="shortcut icon" href="../../assets/ico/stack/web.svg" type="image/x-icon">
     </head>
     <body>
         <form action="./evenOdd.php" method="post">
@@ -17,7 +17,7 @@
         <a href="../../" class="back">&larr; Kembali</a>
         <?php if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST["n"])) { ?>
             <div id="pop">
-                <p><?= ($n = $_POST["n"]) . " adalah bilangan&nbsp;<b>" . ($n % 2 === 0 ? "genap" : "ganjil") . "</b>." ?></p>
+                <p><?= $n = $_POST["n"] ?> adalah bilangan&nbsp;<b><?= $n % 2 === 0 ? "genap" : "ganjil" ?></b></p>
             </div>
             <script>
                 const overlay = document.getElementById("pop");

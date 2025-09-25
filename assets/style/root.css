@@ -9,30 +9,46 @@
 
 @font-face {
     font-family: "Space Mono";
-    src: url("../src/font/SpaceMono-Regular.woff2");
+    src: url("../font/SpaceMono-Regular.woff2");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Space Mono";
-    src: url("../src/font/SpaceMono-Italic.woff2");
+    src: url("../font/SpaceMono-Italic.woff2");
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Space Mono";
-    src: url("../src/font/SpaceMono-Bold.woff2");
+    src: url("../font/SpaceMono-Bold.woff2");
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Space Mono";
-    src: url("../src/font/SpaceMono-BoldItalic.woff2");
+    src: url("../font/SpaceMono-BoldItalic.woff2");
     font-weight: bold;
     font-style: italic;
+}
+
+[data-overlayscrollbars-viewport] {
+  overflow-x: var(--os-viewport-overflow-x);
+  overflow-y: var(--os-viewport-overflow-y);
+}
+
+.os-scrollbar {
+  --os-size: 1rem;
+  --os-padding-perpendicular: .25rem;
+  --os-padding-axis: .25rem;
+  --os-handle-border-radius: .25rem;
+  --os-handle-bg: var(--shd);
+  --os-handle-bg-hover: var(--sub);
+  --os-handle-bg-active: var(--sec);
+  --os-handle-min-size: calc(100vh / 10);
 }
 
 * {
@@ -46,17 +62,15 @@
 }
 
 html, body {
-    min-width: 100vw;
+    min-width: 100%;
     min-height: 100vh;
 }
 
 html {
-    background-color: var(--bg);
+    background: var(--bg);
 }
 
 body {
-    padding: 0 .5rem;
-    overflow-x: hidden;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;

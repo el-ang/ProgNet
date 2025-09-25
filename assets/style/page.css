@@ -6,7 +6,6 @@ h2 {
     align-items: center;
     gap: 2rem;
     text-align: center;
-    padding-bottom: 1rem;
 }
 
 h2::before {
@@ -16,7 +15,7 @@ h2::before {
     position: relative;
     float: left;
     background: var(--prim);
-    --mask: url("../src/ico/stack/php.svg") center / cover no-repeat;
+    --mask: url("../ico/stack/php.svg") center / cover no-repeat;
     -webkit-mask: var(--mask);
     mask: var(--mask);
 }
@@ -33,10 +32,6 @@ section, .task {
     justify-content: center;
     align-items: center;
     padding-bottom: 4rem;
-}
-
-section {
-    gap: .5rem;
 }
 
 .task {

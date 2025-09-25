@@ -1,33 +1,37 @@
-<?php
-$biodata = "";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nama = htmlspecialchars($_POST['nama']);
-    $umur = (int)$_POST['umur'];
-    $jk = htmlspecialchars($_POST['jk']);
-    $alamat = htmlspecialchars($_POST['alamat']);
-
-    $biodata = "Halo, nama saya $nama. Umur saya $umur tahun. Saya seorang $jk. Saya tinggal di $alamat.";
-}
-?>
 <!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><title>Biodata Singkat</title></head>
-<body style="font-family:sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh;background:#e8f5e9;">
-    <div style="background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.1);width:350px;text-align:center;">
-        <h2>Biodata Singkat</h2>
-        <form method="post">
-            <input type="text" name="nama" placeholder="Nama" required style="padding:10px;width:100%;margin:5px 0;border-radius:5px;border:1px solid #ccc;">
-            <input type="number" name="umur" placeholder="Umur" required style="padding:10px;width:100%;margin:5px 0;border-radius:5px;border:1px solid #ccc;">
-            <select name="jk" required style="padding:10px;width:100%;margin:5px 0;border-radius:5px;border:1px solid #ccc;">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form Biodata</title>
+        <link rel="stylesheet" href="../../assets/style/root.css">
+        <link rel="stylesheet" href="../../assets/style/form.css">
+        <link rel="shortcut icon" href="../../assets/ico/stack/web.svg" type="image/x-icon">
+    </head>
+    <body>
+        <form action="./formBio.php" method="post">
+            <h4>Form Biodata</h4>
+            <input type="text" name="nama" placeholder="Nama anda..." required>
+            <input type="number" name="umur" placeholder="Umur anda..." required>
+            <select name="gender" required>
+                <option value="" disabled selected hidden>Jenis Kelamin</option>
                 <option value="Laki-laki">Laki-laki</option>
                 <option value="Perempuan">Perempuan</option>
             </select>
-            <textarea name="alamat" placeholder="Alamat" required style="padding:10px;width:100%;margin:5px 0;border-radius:5px;border:1px solid #ccc;"></textarea>
-            <button type="submit" style="padding:10px 20px;background:#4CAF50;color:white;border:none;border-radius:5px;cursor:pointer;margin-top:10px;">Kirim</button>
+            <textarea name="alamat" placeholder="Alamat anda..." required></textarea>
+            <button type="submit">Simpan</button>
         </form>
-        <?php if ($biodata): ?>
-            <p style="margin-top:15px;"><?= $biodata ?></p>
-        <?php endif; ?>
-    </div>
-</body>
+        <a href="../../" class="back">&larr; Kembali</a>
+        <?php if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST["nama"]) && !empty($_POST["umur"]) && !empty($_POST["gender"]) && !empty($_POST["alamat"])) { ?>
+            <div id="pop">
+                <p>Halo, nama saya&nbsp;<b><?= $_POST["nama"] ?></b>. Umur saya&nbsp;<b><?= $_POST["umur"] ?></b>&nbsp;tahun. Saya seorang&nbsp;<b><?= $_POST["gender"] ?></b>. Saya tinggal di&nbsp;<b><?= $_POST["alamat"] ?></b>.</p>
+            </div>
+            <script>
+                const overlay = document.getElementById("pop");
+                overlay.addEventListener("click", e => {
+                    if (e.target === overlay) overlay.remove();
+                });
+            </script>
+        <?php } ?>
+    </body>
 </html>
