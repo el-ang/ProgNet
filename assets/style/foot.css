@@ -1,10 +1,13 @@
 footer {
     width: 100vw;
-    padding: 3rem 5vw 2rem 5vw;
+    padding: max(3vw, 1rem);
+    padding-top: 3.5rem;
+    padding-bottom: 1.5rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between;;
+    align-items: start;
     position: relative;
+    --foot: var(--sub);
 }
 
 footer::before {
@@ -21,6 +24,39 @@ footer::before {
     z-index: -1;
 }
 
+footer * {
+    color: var(--foot) !important;
+}
+
+footer a {
+    transition:
+        color .2s ease-out,
+        background .2s ease-out;
+}
+
+footer a:hover,
+footer a:focus {
+    --foot: var(--prim);
+}
+
+footer a:active {
+    --foot: var(--txt);
+}
+
+footer section {
+    display: flex;
+    flex-flow: column;
+    gap: .5rem;
+}
+
+footer section:first-child {
+    align-items: start;
+}
+
+footer section:last-child {
+    align-items: end;
+}
+
 .copy {
     display: flex;
 }
@@ -28,7 +64,6 @@ footer::before {
 .copy * {
     transition: all .2s ease-out;
     display: inline-block;
-    color: var(--sub);
 }
 
 .copy p:first-child {
@@ -39,20 +74,11 @@ footer::before {
 }
 
 .copy p:last-child {
-    width: 1.9rem;
+    width: 1.85rem;
     direction: rtl;
     overflow: hidden;
     text-overflow: clip;
     white-space: nowrap;
-}
-
-.copy:hover *,
-.copy:focus *{
-    color: var(--prim);
-}
-
-.copy:active * {
-    color: var(--txt);
 }
 
 .copy:hover p:first-child,
@@ -75,25 +101,16 @@ footer::before {
 
 .contact {
     display: flex;
-    gap: max(4vw, 4vh);
+    gap: 1rem;
 }
 
 .contact a {
     width: 1.5rem;
     height: 1.5rem;
     transition: all .2s;
-    background: var(--sub);
+    background: var(--foot);
     -webkit-mask: var(--mask) center / cover no-repeat;
     mask: var(--mask) center / cover no-repeat;
-}
-
-.contact a:hover,
-.contact a:focus{
-    background: var(--prim);
-}
-
-.contact a:active {
-    background: var(--sec);
 }
 
 .contact a:first-child {
@@ -106,4 +123,12 @@ footer::before {
 
 .contact a:last-child {
     --mask: url("../ico/social/li.svg");
+}
+
+.cred *, .addr {
+    font-size: .8rem;
+}
+
+.addr {
+    text-align: right;
 }

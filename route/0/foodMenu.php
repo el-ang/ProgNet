@@ -15,7 +15,7 @@
             <select name="menu" required>
                 <option value="" disabled selected hidden>Pilih menu</option>
                 <option value="nasgor">Nasi Goreng Jakarta</option>
-                <option value="soto">Soto Sapi Malang</option>
+                <option value="soto">Soto Sapi Lamongan</option>
                 <option value="mie">Mie Ayam Medan</option>
             </select>
             <button type="submit">Cek Harga</button>
@@ -33,7 +33,7 @@
             <div id="pop">
                 <div class="food">
                     <h5 class="<?= $_POST["menu"] ?>"><?= $menu ?></h5>
-                    <p><b>Harga</b>: Rp. <?= number_format($p, 0, ",", ".") ?></p>
+                    <p>Harga: Rp.&nbsp;<b><?= number_format($p, 0, ",", ".") ?></b></p>
                 </div>
             </div>
             <script>

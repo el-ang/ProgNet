@@ -1,0 +1,47 @@
+.food {
+    max-width: min(80vw, 80vh);
+    padding: 2rem;
+    background: var(--shd);
+    border: 2px solid var(--bg);
+    outline: 2px solid var(--sec);
+    position: relative;
+    border-radius: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: .5rem;
+    z-index: -1;
+}
+
+.food h5 {
+    margin-top: 3rem;
+    color: var(--sec);
+    font-size: 2rem;
+}
+
+.food h5::before {
+    width: 90%;
+    aspect-ratio: 4/3;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -55%);
+}   
+
+.food h5.nasgor::before {
+    content: "";
+    background: url("../img/mockup/nasgor.png") center / contain no-repeat;
+}
+
+.food h5.soto::before {
+    content: "";
+    background: url("../img/mockup/soto.png") center / contain no-repeat;
+}
+
+.food h5.mie::before {
+    content: "";
+    background: url("../img/mockup/mie.png") center / contain no-repeat;
+}

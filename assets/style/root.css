@@ -91,3 +91,7 @@ a:focus {
 a:active {
     color: var(--txt);
 }
+
+.back:last-of-type {
+    margin-bottom: 2rem;
+}

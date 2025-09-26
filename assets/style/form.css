@@ -13,6 +13,10 @@ form, #pop>p {
     gap: .5rem;
 }
 
+#pop {
+    position: fixed;
+}
+
 #pop>p {
     outline-color: var(--sec);
     flex-flow: row wrap;

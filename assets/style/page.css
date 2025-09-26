@@ -26,7 +26,7 @@ h3 {
     text-align: center;
 }
 
-section, .task {
+main section, .task {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -38,7 +38,7 @@ section, .task {
     gap: 2rem;
 }
 
-section>*:not(:last-child) {
+main section>*:not(:last-child) {
     border-bottom: var(--shd) solid 2px;
 }
 

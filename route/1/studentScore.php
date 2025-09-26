@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-overlayscrollbars-initialize>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Nilai Mahasiswa</title>
+        <link rel="stylesheet" href="../../assets/style/overlayscrollbars.min.css">
         <link rel="stylesheet" href="../../assets/style/root.css">
         <link rel="stylesheet" href="../../assets/style/table.css">
         <link rel="shortcut icon" href="../../assets/ico/stack/web.svg" type="image/x-icon">
+        <script src="../../assets/script/lib/overlayscrollbars.browser.es5.min.js" defer></script>
+        <script src="../../assets/script/main.js" defer></script>
     </head>
-    <body>
-        <main>
+    <body data-overlayscrollbars-initialize>
+        <main style="margin: 3rem; margin-bottom: 0;">
             <h4>Nilai Mahasiswa</h4>
             <table>
                 <tr>
