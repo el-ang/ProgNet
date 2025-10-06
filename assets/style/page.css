@@ -64,7 +64,6 @@ main section>*:not(:last-child) {
     outline: 2px solid var(--card, var(--sub));
     border: 2px solid var(--bg);
     transform: rotateZ(60deg);
-    transition: all .5s ease-out;
     background: linear-gradient(45deg, var(--shd), #222, var(--bg));
     background-size: 200% 200%;
     background-position: 100% 0%;
@@ -76,4 +75,5 @@ main section>*:not(:last-child) {
     transform: rotateZ(80deg);
     margin: 0 -1rem 2rem -5rem;
     background-position: 0% 100%;
+    transition: all .5s ease-out;
 }

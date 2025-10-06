@@ -169,10 +169,6 @@ h1 * {
     position: relative;
     border: 1px solid var(--col);
     z-index: 2;
-    transition:
-        background-color .2s,
-        color .2s,
-        border-color .2s;
 }
 
 .detail a::after {
@@ -187,7 +183,6 @@ h1 * {
     --mask: url("../ico/social/gh.svg") center / cover no-repeat;
     -webkit-mask: var(--mask);
     mask: var(--mask);
-    transition: background-color .2s;
 }
 
 .detail a:hover,
@@ -254,28 +249,46 @@ h1 * {
     --chip: url("../ico/ui/bio.svg");
 }
 
-.task:last-of-type .card:first-child {
+.task:nth-of-type(2) .card:first-child,
+.task:nth-of-type(3) .card:first-child {
     --chip: url("../ico/ui/list.svg");
 }
 
-.task:last-of-type .card:nth-child(2) {
+.task:nth-of-type(2) .card:nth-child(2) {
     --chip: url("../ico/ui/nerd.svg");
 }
 
-.task:last-of-type .card:nth-child(3) {
+.task:nth-of-type(2) .card:nth-child(3) {
     --chip: url("../ico/ui/tag.svg");
 }
 
-.task:last-of-type .card:nth-child(4) {
+.task:nth-of-type(2) .card:nth-child(4) {
     --chip: url("../ico/ui/even.svg");
 }
 
-.task:last-of-type .card:nth-child(5) {
+.task:nth-of-type(2) .card:nth-child(5) {
     --chip: url("../ico/ui/data.svg");
 }
 
-.task:last-of-type .card:last-child {
+.task:nth-of-type(2) .card:last-child,
+.task:nth-of-type(3) .card:last-child {
     --chip: url("../ico/ui/scobo.svg");
+}
+
+.task:nth-of-type(3) .card:nth-child(2) {
+    --chip: url("../ico/ui/db.svg");
+}
+
+.task:nth-of-type(3) .card:nth-child(3) {
+    --chip: url("../ico/ui/uPen.svg");
+}
+
+.task:nth-of-type(3) .card:nth-child(4) {
+    --chip: url("../ico/ui/valid.svg");
+}
+
+.task:nth-of-type(3) .card:nth-child(5) {
+    --chip: url("../ico/ui/sns.svg");
 }
 
 .card * {

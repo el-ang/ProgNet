@@ -1,6 +1,6 @@
 form, #pop>p {
     max-width: min(80vw, 80vh);
-    padding: 2rem;
+    padding: 1rem 2rem;
     background: var(--shd);
     border: 2px solid var(--bg);
     outline: 2px solid var(--prim);
@@ -41,9 +41,7 @@ select, input, textarea {
     border-bottom: 1px solid var(--sub);
     background: var(--bg);
     color: var(--txt);
-    transition:
-        border-bottom .2s ease-in-out,
-        color .2s ease-in-out;
+    transition: border-bottom .2s ease-in-out;
 }
 
 select:invalid,

@@ -1,6 +1,6 @@
 main {
     width: max-content;
-    padding: 2rem;
+    padding: 1rem 2rem;
     background: var(--shd);
     border: 2px solid var(--bg);
     outline: 2px solid var(--prim);

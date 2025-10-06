@@ -45,6 +45,14 @@
                             "Data Mahasiswa" => "studentData",
                             "Nilai Mahasiswa" => "studentScore"
                         ],
+                        "Dasar-dasar<br>CRUD MySQL<br>JS DOM & Event" => [
+                            "Inisiasi DB & Tabel" => "query",
+                            "Koneksi DB" => "conn",
+                            "CRUD Mahasiswa" => "crud",
+                            "Form Validasi" => "add",
+                            "Search & Sort" => "sns",
+                            "Implementasi Nilai" => ""
+                        ]
                     ];
                     $j = 0;
                     foreach ($material as $deck => $card) {
@@ -56,7 +64,7 @@
                                 $i = 1;
                                 foreach ($card as $title => $file) {
                             ?>
-                                <a href="./route/<?= $j ?>/<?= $file ?>.php" class="card">
+                                <a href="./route/<?= $j ?><?= $file ? "/$file.php" : "" ?>" class="card">
                                     <h4><?= $title ?></h4>
                                     <p><?= str_pad($i, 2, '0', STR_PAD_LEFT) ?>/<?= str_pad(count($card), 2, '0', STR_PAD_LEFT) ?> - <?= str_pad($j + 1, 2, '0', STR_PAD_LEFT) ?>/<?= str_pad(count($material), 2, '0', STR_PAD_LEFT) ?></p>
                                 </a>
@@ -89,8 +97,8 @@
             <section>
                 <div class="contact">
                     <a href="https://github.com/el-ang"></a>
-                    <a href="https://instagram.com/el.ang_"></a>
                     <a href="https://linkedin.com/in/el-ang"></a>
+                    <a href="https://instagram.com/el.ang_"></a>
                 </div>
                 <b class="addr">
                     PROGRAM STUDI SARJANA<br><a href="https://instagram.com/hmtiudayana">TEKNOLOGI INFORMASI</a><br>

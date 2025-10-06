@@ -3,27 +3,22 @@ Repositori khusus materi dan penugasan pembelajaran kelas mata kuliah Pemrograma
 
 <details><summary><b>Disusun Oleh</b></summary>El Roy Situmorang (2305551105)<br>
 
-[![GitHub](./assets/ico/social/gh.svg)](https://github.com/el-ang)&nbsp;&nbsp;[![Instagram](./assets/ico/social/ig.svg)](https://instagram.com/el.ang_)&nbsp;&nbsp;[![LinkedIn](./assets/ico/social/li.svg)](https://linkedin.com/in/el-ang)
-
-</details>
+[![GitHub](./assets/ico/social/gh.svg)](https://github.com/el-ang)&nbsp;[![LinkedIn](./assets/ico/social/li.svg)](https://linkedin.com/in/el-ang)&nbsp;[![Instagram](./assets/ico/social/ig.svg)](https://instagram.com/el.ang_)</details>
 
 **Kelas Mata Kuliah**:<br>24STIE05X021 - Pemrograman internet B
 
 **Dosen Pengampu**:<br>Ir. I Nyoman Piarsa, ST., MT., IPM.
 
 ## Daftar Isi
-- [Daftar Isi](#daftar-isi)
-- [Struktur Repo](#struktur-repo)
 - [PHP Dasar](#php-dasar)
    - <details><summary><a href="#variabel-operator--kondisi">Variabel, Operator, & Kondisi</a></summary>
-   
+
       - [Form Ucapan](#form-ucapan)
       - [Kalkulator Sederhana](#kalkulator-sederhana)
       - [Ganjil/Genap](#ganjilgenap)
       - [Nilai Huruf](#nilai-huruf)
       - [Menu Makan](#menu-makan)
       - [Form Biodata](#form-biodata)
-   
    </details>
 
    - <details><summary><a href="#loop--array">Loop & Array</a></summary>
@@ -34,8 +29,18 @@ Repositori khusus materi dan penugasan pembelajaran kelas mata kuliah Pemrograma
       - [Baris Genap](#baris-genap)
       - [Data Mahasiswa](#data-mahasiswa)
       - [Nilai Mahasiswa](#nilai-mahasiswa)
-   
    </details>
+
+   - <details><summary><a href="#dasar-dasar-crud-mysql-dan-js-dom--event">Dasar-dasar CRUD MySQL dan JS DOM & Event</a></summary>
+   
+      - [Inisiasi DB & Tabel](#inisiasi-db--tabel)
+      - [Koneksi DB](#koneksi-db)
+      - [CRUD Mahasiswa](#crud-mahasiswa)
+      - [Form Validasi](#form-validasi)
+      - [Search & Sort](#search--sort)
+      - [Implementasi Nilai](#implementasi-nilai)
+   </details>
+   
 - [Web Dev](#web-dev)
 - [Tribute](#tribute)
    - [License](LICENSE)
@@ -47,7 +52,7 @@ ProgNet              # Repo Pemrograman Internet
 │   ├── ...
 │   └── img                # Folder gambar
 │       ├── ...
-│       └── snap            # Folder screenshot
+│       └── snap              # Folder screenshot
 ├── licenses            # Folder lisensi
 ├── route               # Folder route (file PHP)
 │   ├── 0                  # Folder tugas PHP Dasar - Variabel, Operator, & Kondisi
@@ -95,6 +100,7 @@ Form untuk menginput nilai angka, lalu menampilkan nilai huruf berdasarkan renta
 #### Menu Makan
 Form pilihan menu makanan dengan *switch-case*, lalu menampilkan harga berdasarkan pilihan.
 ![Menu Makan](./assets/img/snap/foodMenu.png)
+> Gambar mengandung ilustrasi bersumber dari karya *Artificial Intelligence* (AI).
 
 #### Form Biodata
 Form untuk menginput biodata (nama, umur, jenis kelamin, dan alamat), lalu menampilkan data yang diinput.
@@ -129,17 +135,25 @@ Menampilkan data mahasiswa (nama, nim, umur, dan prodi) di dalam *multidimension
 Menampilkan data nilai mahasiswa (nama, nim, nilai, dan keterangan lulus/tidak lulus) di dalam *multidimensional array* dengan *looping* dan kondisi melalui tabel.
 ![Nilai Mahasiswa](./assets/img/snap/studentScore.png)
 
+### Dasar-dasar CRUD MySQL dan JS DOM & Event
+
+#### Inisiasi DB & Tabel
+
+#### Koneksi DB
+
+#### CRUD Mahasiswa
+
+#### Form Validasi
+
+#### Search & Sort
+
+#### Implementasi Nilai
+
 ## Web Dev
 
 ## Tribute
 [**© 2025 El Roy Situmorang**](licenses/LICENSE)
 
-[Space Mono Font](https://github.com/googlefonts/spacemono) by [Colophon Foundry](https://instagram.com/colophonfoundry), distributed by [Google Fonts](https://fonts.google.com/specimen/Space+Mono)
+[Space Mono Font](https://github.com/googlefonts/spacemono) by [Colophon Foundry](https://instagram.com/colophonfoundry), distributed by [Google Fonts](https://fonts.google.com/specimen/Space+Mono)<br>[Boxicons](https://boxicons.com) by [Atisa](https://github.com/atisawd)<br>[Material Design Icons](https://github.com/google/material-design-icons) originated by [Google](https://google.com) and [Material Extension Icons](https://github.com/material-extensions/vscode-material-icon-theme) by [Philipp Kief](https://github.com/PKief)<br>[OverlayScrollbars](https://kingsora.github.io/OverlayScrollbars) by [Rene Haas](https://github.com/KingSora)
 
-[Boxicons](https://boxicons.com) by [Atisa](https://github.com/atisawd)
-
-[Material Design Icons](https://github.com/google/material-design-icons) originated by [Google](https://google.com) and [Material Extension Icons](https://github.com/material-extensions/vscode-material-icon-theme) by [Philipp Kief](https://github.com/PKief)
-
-[OverlayScrollbars](https://kingsora.github.io/OverlayScrollbars) by [Rene Haas](https://github.com/KingSora)
-
-<sup><b>PROGRAM STUDI SARJANA TEKNOLOGI INFORMASI<br>FAKULTAS TEKNIK<br>UNIVERSITAS UDAYANA<br>GANJIL 2025/2026</b></sup>
+<sub><b>PROGRAM STUDI SARJANA<br>[TEKNOLOGI INFORMASI](https://instagram.com/hmtiudayana)<br>[FAKULTAS TEKNIK](https://instagram.com/ftunud)<br>[UNIVERSITAS UDAYANA](https://unud.ac.id)<br>GANJIL 2025/2026</b></sub>

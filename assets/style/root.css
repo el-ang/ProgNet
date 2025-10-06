@@ -59,6 +59,10 @@
     color: var(--txt);
     scroll-behavior: smooth;
     text-decoration: none;
+    transition:
+        background .1s,
+        border .1s,
+        color .1s;
 }
 
 html, body {

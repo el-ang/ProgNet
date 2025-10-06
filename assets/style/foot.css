@@ -28,12 +28,6 @@ footer * {
     color: var(--foot) !important;
 }
 
-footer a {
-    transition:
-        color .2s ease-out,
-        background .2s ease-out;
-}
-
 footer a:hover,
 footer a:focus {
     --foot: var(--prim);
@@ -62,8 +56,12 @@ footer section:last-child {
 }
 
 .copy * {
-    transition: all .2s ease-out;
     display: inline-block;
+}
+
+.copy:hover *,
+.copy:focus * {
+    transition: all .2s ease-out;
 }
 
 .copy p:first-child {
@@ -107,7 +105,6 @@ footer section:last-child {
 .contact a {
     width: 1.5rem;
     height: 1.5rem;
-    transition: all .2s;
     background: var(--foot);
     -webkit-mask: var(--mask) center / cover no-repeat;
     mask: var(--mask) center / cover no-repeat;
