@@ -21,16 +21,12 @@
             <textarea name="alamat" placeholder="Alamat anda..." required></textarea>
             <button type="submit">Simpan</button>
         </form>
-        <a href="../../" class="back">&larr; Kembali</a>
+        <a href="../.." class="back">&larr; Kembali</a>
         <?php if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST["nama"]) && !empty($_POST["umur"]) && !empty($_POST["gender"]) && !empty($_POST["alamat"])) { ?>
-            <div id="pop">
-                <p>Halo, nama saya&nbsp;<b><?= $_POST["nama"] ?></b>. Umur saya&nbsp;<b><?= $_POST["umur"] ?></b>&nbsp;tahun. Saya seorang&nbsp;<b><?= $_POST["gender"] ?></b>. Saya tinggal di&nbsp;<b><?= $_POST["alamat"] ?></b>.</p>
-            </div>
+            <div id="pop"><p>Halo, nama saya&nbsp;<b><?= $_POST["nama"] ?></b>. Umur saya&nbsp;<b><?= $_POST["umur"] ?></b>&nbsp;tahun. Saya seorang&nbsp;<b><?= $_POST["gender"] ?></b>. Saya tinggal di&nbsp;<b><?= $_POST["alamat"] ?></b>.</p></div>
             <script>
                 const overlay = document.getElementById("pop");
-                overlay.addEventListener("click", e => {
-                    if (e.target === overlay) overlay.remove();
-                });
+                overlay.addEventListener("click", e => { if (e.target === overlay) overlay.remove(); });
             </script>
         <?php } ?>
     </body>

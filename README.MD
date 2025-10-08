@@ -55,20 +55,30 @@ ProgNet              # Repo Pemrograman Internet
 │       └── snap              # Folder screenshot
 ├── licenses            # Folder lisensi
 ├── route               # Folder route (file PHP)
-│   ├── 0                  # Folder tugas PHP Dasar - Variabel, Operator, & Kondisi
+│   ├── 0                  # Folder tugas PHP Dasar · Variabel, Operator, & Kondisi
 │   │   ├── calc.php          # Kalkulator Sederhana
 │   │   ├── evenOdd.php       # Ganjil/Genap
 │   │   ├── foodMenu.php      # Menu Makan
 │   │   ├── formBio.php       # Form Biodata
 │   │   ├── formGreet.php     # Form Ucapan
 │   │   └── grade.php         # Nilai Huruf
-│   └── 1                  # Folder tugas PHP Dasar - Loop & Array
-│       ├── even.php          # Baris Genap
-│       ├── itemList.php      # Daftar Barang
-│       ├── priceList.php     # Daftar Harga
-│       ├── studentData.php   # Data Mahasiswa
-│       ├── studentList.php   # Daftar Mahasiswa
-│       └── studentScore.php  # Nilai Mahasiswa
+│   ├── 1                  # Folder tugas PHP Dasar · Loop & Array
+│   │   ├── even.php          # Baris Genap
+│   │   ├── itemList.php      # Daftar Barang
+│   │   ├── priceList.php     # Daftar Harga
+│   │   ├── studentData.php   # Data Mahasiswa
+│   │   ├── studentList.php   # Daftar Mahasiswa
+│   │   └── studentScore.php  # Nilai Mahasiswa
+│   └── 2                  # Folder tugas PHP Dasar · Dasar-dasar CRUD MySQL dan JS DOM & Event
+│       ├── query.php         # Inisiasi DB & Tabel
+│       ├── conn.php          # Koneksi Database
+│       ├── crud              # Folder CRUD Mahasiswa
+│       │   ├── index.php        # Tabel Data Mahasiswa
+│       │   ├── add.php          # Form Validasi Tambah Data
+│       │   ├── edit.php         # Form Validasi Edit Data
+│       │   └── delete.php       # Konfirmasi Hapus Data
+│       ├── sns.php           # Search & Sort
+│       └── score.php         # Implementasi Nilai
 ├── index.php        # Halaman utama
 └── README.MD        # Panduan & dokumentasi
 ```

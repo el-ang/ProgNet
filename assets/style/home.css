@@ -180,6 +180,7 @@ h1 * {
     top: 50%;
     left: .5rem;
     transform: translateY(-50%);
+    transition: background .1s;
     --mask: url("../ico/social/gh.svg") center / cover no-repeat;
     -webkit-mask: var(--mask);
     mask: var(--mask);

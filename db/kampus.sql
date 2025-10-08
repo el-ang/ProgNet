@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS nilai (
     mahasiswa_id INT NOT NULL,
     mata_kuliah VARCHAR(50) NOT NULL,
     sks TINYINT NOT NULL,
-    nilai_huruf ENUM('A','B','C','D','E') NOT NULL,
+    nilai_huruf ENUM("A","B","C","D","E") NOT NULL,
     nilai_angka DECIMAL(3,2) NOT NULL,
     FOREIGN KEY (mahasiswa_id) REFERENCES mahasiswa(id) ON DELETE CASCADE
 );

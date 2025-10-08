@@ -48,10 +48,10 @@
                         "Dasar-dasar<br>CRUD MySQL<br>JS DOM & Event" => [
                             "Inisiasi DB & Tabel" => "query",
                             "Koneksi DB" => "conn",
-                            "CRUD Mahasiswa" => "crud",
-                            "Form Validasi" => "add",
+                            "CRUD Mahasiswa" => "student/index",
+                            "Form Validasi" => "student/add",
                             "Search & Sort" => "sns",
-                            "Implementasi Nilai" => ""
+                            "Implementasi Nilai" => "score"
                         ]
                     ];
                     $j = 0;
@@ -64,20 +64,14 @@
                                 $i = 1;
                                 foreach ($card as $title => $file) {
                             ?>
-                                <a href="./route/<?= $j ?><?= $file ? "/$file.php" : "" ?>" class="card">
+                                <a href="./route/<?= $j ?>/<?= $file ?>.php" class="card">
                                     <h4><?= $title ?></h4>
-                                    <p><?= str_pad($i, 2, '0', STR_PAD_LEFT) ?>/<?= str_pad(count($card), 2, '0', STR_PAD_LEFT) ?> - <?= str_pad($j + 1, 2, '0', STR_PAD_LEFT) ?>/<?= str_pad(count($material), 2, '0', STR_PAD_LEFT) ?></p>
+                                    <p><?= str_pad($i, 2, "0", STR_PAD_LEFT) ?>/<?= str_pad(count($card), 2, "0", STR_PAD_LEFT) ?> - <?= str_pad($j + 1, 2, "0", STR_PAD_LEFT) ?>/<?= str_pad(count($material), 2, "0", STR_PAD_LEFT) ?></p>
                                 </a>
-                            <?php
-                                    $i++;
-                                }
-                            ?>
+                            <?php $i++; } ?>
                         </div>
                     </div>
-                <?php
-                    $j++;
-                }
-                ?>
+                <?php $j++; } ?>
             </section>
         </main>
         <footer>

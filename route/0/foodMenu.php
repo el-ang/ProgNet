@@ -20,7 +20,7 @@
             </select>
             <button type="submit">Cek Harga</button>
         </form>
-        <a href="../../" class="back">&larr; Kembali</a>
+        <a href="../.." class="back">&larr; Kembali</a>
         <?php
             if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST["menu"])) {
                 switch ($menu = $_POST["menu"]) {
@@ -38,9 +38,7 @@
             </div>
             <script>
                 const overlay = document.getElementById("pop");
-                overlay.addEventListener("click", e => {
-                    if (e.target === overlay) overlay.remove();
-                });
+                overlay.addEventListener("click", e => { if (e.target === overlay) overlay.remove(); });
             </script>
         <?php } ?>
     </body>

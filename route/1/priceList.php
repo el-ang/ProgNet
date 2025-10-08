@@ -34,6 +34,6 @@
                 <?php } ?>
             </table>
         </main>
-        <a href="../../" class="back">&larr; Kembali</a>
+        <a href="../.." class="back">&larr; Kembali</a>
     </body>
 </html>

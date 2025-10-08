@@ -60,9 +60,9 @@
     scroll-behavior: smooth;
     text-decoration: none;
     transition:
-        background .1s,
-        border .1s,
-        color .1s;
+        background .2s,
+        border .2s,
+        color .2s;
 }
 
 html, body {
@@ -70,9 +70,7 @@ html, body {
     min-height: 100vh;
 }
 
-html {
-    background: var(--bg);
-}
+html { background: var(--bg); }
 
 body {
     display: flex;
@@ -87,15 +85,6 @@ a {
     text-align: center;
 }
 
-a:hover,
-a:focus {
-    color: var(--sub);
-}
+a:hover, a:focus { color: var(--sub); }
 
-a:active {
-    color: var(--txt);
-}
-
-.back:last-of-type {
-    margin-bottom: 2rem;
-}
+a:active { color: var(--txt); }

@@ -1,78 +1,78 @@
 <?php
-    $a   = $_POST['a']   ?? '';
-    $b   = $_POST['b']   ?? '';
-    $op  = $_POST['op']  ?? '';
-    $c   = $_POST['c']   ?? '';
-    $los = $_POST['los'] ?? '';
-    $in  = $_POST['in']  ?? '';
+    $a   = $_POST["a"]   ?? "";
+    $b   = $_POST["b"]   ?? "";
+    $op  = $_POST["op"]  ?? "";
+    $c   = $_POST["c"]   ?? "";
+    $los = $_POST["los"] ?? "";
+    $in  = $_POST["in"]  ?? "";
 
-    $prev = '';
-    $curr = '0';
+    $prev = "";
+    $curr = "0";
 
     function norm($v) {
-        if ($v==='') return '';
-        if ($v==='.') return '0.';
-        if (strpos($v,'.')===0) return '0'.$v;
-        if (preg_match('/^0[0-9]+$/',$v) && strpos($v,'.')===false) return ltrim($v,'0');
+        if ($v==="") return "";
+        if ($v===".") return "0.";
+        if (strpos($v,".")===0) return "0".$v;
+        if (preg_match("/^0[0-9]+$/",$v) && strpos($v,".")===false) return ltrim($v,"0");
         return $v;
     }
 
-    if (is_numeric($in) || $in==='.' || $in==='±') {
-        if ($op==='' && $c!=='' && $los==='=') $a=$b=$op=$c=$los=$prev='';
-        $t = $op==='' ? $a : $b;
-        if ($in==='±') $t = ($t!=='' && $t!=='0') ? (string)(-$t) : '0';
-        elseif ($in==='.') $t = ($t===''||$t==='0') ? '0.' : (strpos($t,'.')===false?$t.'.':$t);
-        else $t = $t==='0' ? $in : $t.$in;
-        if ($op==='') $a=$t; else $b=$t;
+    if (is_numeric($in) || $in==="." || $in==="±") {
+        if ($op==="" && $c!=="" && $los==="=") $a=$b=$op=$c=$los=$prev="";
+        $t = $op==="" ? $a : $b;
+        if ($in==="±") $t = ($t!=="" && $t!=="0") ? (string)(-$t) : "0";
+        elseif ($in===".") $t = ($t===""||$t==="0") ? "0." : (strpos($t,".")===false?$t.".":$t);
+        else $t = $t==="0" ? $in : $t.$in;
+        if ($op==="") $a=$t; else $b=$t;
     }
 
-    elseif (in_array($in,['+','-','*','/'])) {
-        if ($a!=='' && $b!=='' && $op!=='') {
+    elseif (in_array($in,["+","-","*","/"])) {
+        if ($a!=="" && $b!=="" && $op!=="") {
             switch($op){
-                case '+': $c=(float)$a+(float)$b; break;
-                case '-': $c=(float)$a-(float)$b; break;
-                case '*': $c=(float)$a*(float)$b; break;
-                case '/': $c=(float)$b==0?'Error':(float)$a/(float)$b; break;
+                case "+": $c=(float)$a+(float)$b; break;
+                case "-": $c=(float)$a-(float)$b; break;
+                case "*": $c=(float)$a*(float)$b; break;
+                case "/": $c=(float)$b==0?"Error":(float)$a/(float)$b; break;
             }
             $prev="$a $op $b"; 
-            $a=$c; $b='';
+            $a=$c; $b="";
         }
         $op=$in; $los=$in;
     }
 
-    elseif ($in==='=') {
-        if ($a!=='' && $b!=='' && $op!=='') {
+    elseif ($in==="=") {
+        if ($a!=="" && $b!=="" && $op!=="") {
             switch($op){
-                case '+': $c=(float)$a+(float)$b; break;
-                case '-': $c=(float)$a-(float)$b; break;
-                case '*': $c=(float)$a*(float)$b; break;
-                case '/': $c=(float)$b==0?'Error':(float)$a/(float)$b; break;
+                case "+": $c=(float)$a+(float)$b; break;
+                case "-": $c=(float)$a-(float)$b; break;
+                case "*": $c=(float)$a*(float)$b; break;
+                case "/": $c=(float)$b==0?"Error":(float)$a/(float)$b; break;
             }
             $prev="$a $op $b";
-            $a=$c; $b='';
+            $a=$c; $b="";
         }
-        $op=''; $los='=';
+        $op=""; $los="=";
     }
 
-    elseif ($in==='E') {
-        if ($op==='') $a=''; else $b='';
+    elseif ($in==="E") {
+        if ($op==="") $a=""; else $b="";
     }
 
-    elseif ($in==='A') {
-        $a=$b=$op=$c=$los=''; $prev='';
+    elseif ($in==="A") {
+        $a=$b=$op=$c=$los=""; $prev="";
     }
 
-    elseif ($in==='C') {
-        if ($op==='') $a=substr($a,0,-1);
+    elseif ($in==="C") {
+        if ($op==="") $a=substr($a,0,-1);
         else $b=substr($b,0,-1);
     }
 
-    $curr = $op==='' ? ($a===''?'0':$a) : ($b==='' ? "$a $op" : "$a $op $b");
-    if ($curr===''||$curr==='-') $curr='0';
-    if ($curr!=='Error') {
-        $parts=explode(' ',$curr);
+    $curr = $op==="" ? ($a===""?"0":$a) : ($b==="" ? "$a $op" : "$a $op $b");
+    if ($curr===""||$curr==="-") $curr="0";
+    if ($curr!=="Error") {
+        $parts=explode(" ",$curr);
         foreach($parts as &$p) if(is_numeric($p)) $p=norm($p);
-        $curr=implode(' ',$parts);
+        $curr=implode(" ",$parts);
     }
 ?>
 <!DOCTYPE html>
@@ -88,11 +88,11 @@
     </head>
     <body>
         <form action="./calc.php" method="post" id="calc">
-            <input type="hidden" name="a" value="<?= htmlspecialchars($a) ?>">
-            <input type="hidden" name="b" value="<?= htmlspecialchars($b) ?>">
-            <input type="hidden" name="op" value="<?= htmlspecialchars($op) ?>">
-            <input type="hidden" name="c" value="<?= htmlspecialchars($c) ?>">
-            <input type="hidden" name="los" value="<?= htmlspecialchars($los) ?>">
+            <input type="hidden" name="a" value="<?= $a ?>">
+            <input type="hidden" name="b" value="<?= $b ?>">
+            <input type="hidden" name="op" value="<?= $op ?>">
+            <input type="hidden" name="c" value="<?= $c ?>">
+            <input type="hidden" name="los" value="<?= $los ?>">
             <input type="hidden" name="in" id="in">
             <h4>Kalkulator<br>Sederhana</h4>
             <div class="calc">
@@ -125,7 +125,7 @@
                 </div>
             </div>
         </form>
-        <a href="../../" class="back">&larr; Kembali</a>
+        <a href="../.." class="back">&larr; Kembali</a>
         <script>
             document.querySelectorAll("button[data-val]").forEach(btn => {
                 btn.type = "button";

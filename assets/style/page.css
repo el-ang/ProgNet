@@ -67,13 +67,29 @@ main section>*:not(:last-child) {
     background: linear-gradient(45deg, var(--shd), #222, var(--bg));
     background-size: 200% 200%;
     background-position: 100% 0%;
+    transition:
+        background .5s ease-in-out,
+        transform .2s ease-out,
+        margin .2s ease-out;
 }
 
 .card:hover,
-.card:active,
-.card:focus {
+.card:focus,
+.card:active {
     transform: rotateZ(80deg);
-    margin: 0 -1rem 2rem -5rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
     background-position: 0% 100%;
-    transition: all .5s ease-out;
+}
+
+.card+.card:hover,
+.card+.card:focus,
+.card+.card:active {
+    margin-left: -5rem;
+}
+
+.card:hover+.card,
+.card:focus+.card,
+.card:active+.card {
+    margin-left: -1rem;
 }

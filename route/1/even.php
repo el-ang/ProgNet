@@ -15,29 +15,22 @@
             <input type="number" name="z" placeholder="Bilangan terakhir" required>
             <button type="submit">Hitung</button>
         </form>
-        <a href="../../" class="back">&larr; Kembali</a>
+        <a href="../.." class="back">&larr; Kembali</a>
         <?php if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST["a"]) && !empty($_POST["z"])) { ?>
-            <div id="pop">
-                <p>
-                    <?php
-                        $a = (int) $_POST["a"];
-                        $z = (int) $_POST["z"];
-                        if ($a > $z) {
-                            echo "Bilangan pertama harus lebih kecil dari bilangan terakhir!";
-                        } else {
-                            echo "Bilangan genap dari&nbsp;<b>$a</b>&nbsp;sampai&nbsp;<b>$z</b>&nbsp;adalah:&nbsp;<b>";
-                            for ($i = $a; $i <= $z; $i++) {
-                                if ($i % 2 == 0) echo "$i" . ($i < $z - 1 ? ", " : ".</b>");
-                            }
-                        }
-                    ?>
-                </p>
-            </div>
+            <div id="pop"><p>
+                <?php
+                    $a = (int) $_POST["a"];
+                    $z = (int) $_POST["z"];
+                    if ($a > $z) {
+                ?>
+                Bilangan pertama harus lebih kecil dari bilangan terakhir!
+                <?php } else { ?>
+                Bilangan genap dari&nbsp;<b><?= $a ?></b>&nbsp;sampai&nbsp;<b><?= $z ?></b>&nbsp;adalah:&nbsp;<b>
+                <?php for ($i = $a; $i <= $z; $i++) if ($i % 2 == 0) { ?><?= $i . ($i < $z - 1 ? ", " : ".</b>") ?><?php } }?>
+            </p></div>
             <script>
                 const overlay = document.getElementById("pop");
-                overlay.addEventListener("click", e => {
-                    if (e.target === overlay) overlay.remove();
-                });
+                overlay.addEventListener("click", e => { if (e.target === overlay) overlay.remove(); });
             </script>
         <?php } ?>
     </body>

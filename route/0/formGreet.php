@@ -14,16 +14,12 @@
             <input type="text" name="nama" placeholder="Nama anda..." required>
             <button type="submit">Simpan</button>
         </form>
-        <a href="../../" class="back">&larr; Kembali</a>
+        <a href="../.." class="back">&larr; Kembali</a>
         <?php if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST["nama"])) { ?>
-            <div id="pop">
-                <p>Halo&nbsp;<b><?= $_POST["nama"] ?></b>! Selamat belajar PHP!</p>
-            </div>
+            <div id="pop"><p>Halo&nbsp;<b><?= $_POST["nama"] ?></b>! Selamat belajar PHP!</p></div>
             <script>
                 const overlay = document.getElementById("pop");
-                overlay.addEventListener("click", e => {
-                    if (e.target === overlay) overlay.remove();
-                });
+                overlay.addEventListener("click", e => { if (e.target === overlay) overlay.remove(); });
             </script>
         <?php } ?>
     </body>

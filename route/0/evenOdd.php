@@ -14,16 +14,12 @@
             <input type="number" name="n" placeholder="Masukkan bilangan" required>
             <button type="submit">Hitung</button>
         </form>
-        <a href="../../" class="back">&larr; Kembali</a>
+        <a href="../.." class="back">&larr; Kembali</a>
         <?php if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST["n"])) { ?>
-            <div id="pop">
-                <p><?= $n = $_POST["n"] ?> adalah bilangan&nbsp;<b><?= $n % 2 === 0 ? "genap" : "ganjil" ?></b></p>
-            </div>
+            <div id="pop"><p><?= $n = $_POST["n"] ?> adalah bilangan&nbsp;<b><?= $n % 2 === 0 ? "genap" : "ganjil" ?></b></p></div>
             <script>
                 const overlay = document.getElementById("pop");
-                overlay.addEventListener("click", e => {
-                    if (e.target === overlay) overlay.remove();
-                });
+                overlay.addEventListener("click", e => { if (e.target === overlay) overlay.remove(); });
             </script>
         <?php } ?>
     </body>
