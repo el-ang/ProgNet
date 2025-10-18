@@ -1,0 +1,267 @@
+/* CRUD Navigation Extensions - respects existing root.css & table.css */
+
+/* Navigation Layout */
+nav {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    background: var(--bg);
+    border: 2px solid var(--sub);
+    border-radius: .5rem;
+}
+
+/* Search Input - matches your theme */
+input[type="search"] {
+    padding: .5rem 1rem;
+    background: var(--shd);
+    border: 2px solid var(--sub);
+    border-radius: .25rem;
+    color: var(--txt);
+    min-width: 200px;
+}
+
+input[type="search"]:focus {
+    outline: none;
+    border-color: var(--sec);
+}
+
+/* Search Button - using your color scheme */
+input[type="button"]#search {
+    appearance: none;
+    padding: .5rem 1rem;
+    background: var(--sec);
+    color: var(--txt);
+    border: 2px solid var(--sec);
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+input[type="button"]#search::before {
+    content: "🔍";
+}
+
+input[type="button"]#search:hover {
+    background: var(--sub);
+    border-color: var(--sub);
+}
+
+/* Sort Toggle - matches your button style */
+input[type="checkbox"]#sort {
+    appearance: none;
+    padding: .5rem 1rem;
+    background: var(--shd);
+    border: 2px solid var(--sub);
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+input[type="checkbox"]#sort::before {
+    content: "Sort";
+    color: var(--txt);
+}
+
+input[type="checkbox"]#sort:checked {
+    background: var(--sec);
+    border-color: var(--sec);
+}
+
+input[type="checkbox"]#sort:checked::before {
+    content: "Active";
+}
+
+/* Sort Options Container - matches your theme */
+.sort {
+    display: none;
+    background: var(--bg);
+    border: 2px solid var(--sub);
+    border-radius: .25rem;
+    padding: .5rem;
+}
+
+input[type="checkbox"]#sort:checked + .sort {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+
+/* Sort Option Checkboxes - using your existing style pattern */
+input[name="sort"] {
+    appearance: none;
+    padding: .25rem .5rem;
+    background: var(--shd);
+    border: 2px solid var(--sub);
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+input[name="sort"][value="NIM"]::before {
+    content: "NIM";
+}
+
+input[name="sort"][value="Nama"]::before {
+    content: "Nama";
+}
+
+input[name="sort"][value="Prodi"]::before {
+    content: "Prodi";
+}
+
+input[name="sort"]:checked {
+    background: var(--sec);
+    border-color: var(--sec);
+    color: var(--txt);
+}
+
+/* Order Toggle - consistent with your style */
+input[type="checkbox"]#order {
+    appearance: none;
+    padding: .5rem 1rem;
+    background: var(--shd);
+    border: 2px solid var(--sub);
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+input[type="checkbox"]#order::before {
+    content: "ASC";
+    color: var(--txt);
+}
+
+input[type="checkbox"]#order:checked {
+    background: var(--sec);
+    border-color: var(--sec);
+}
+
+input[type="checkbox"]#order:checked::before {
+    content: "DESC";
+}
+
+/* Action Buttons - following your link style pattern */
+.add, .del {
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    text-decoration: none;
+    border: 2px solid;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add {
+    background: var(--sec);
+    border-color: var(--sec);
+    color: var(--txt);
+}
+
+.add::before {
+    content: "+";
+}
+
+.add:hover {
+    background: var(--sub);
+    border-color: var(--sub);
+}
+
+.del {
+    background: var(--prim);
+    border-color: var(--prim);
+    color: var(--txt);
+}
+
+.del::before {
+    content: "×";
+}
+
+.del:hover:not([disabled]) {
+    background: var(--sub);
+    border-color: var(--sub);
+}
+
+.del[disabled] {
+    background: var(--sub);
+    border-color: var(--sub);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Checkbox Styling */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Dropdown Styling */
+.more-column {
+    position: relative;
+    text-align: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    background: var(--shd);
+    border: 2px solid var(--sub);
+    cursor: pointer;
+    padding: .5rem .75rem;
+    border-radius: .25rem;
+    color: var(--txt);
+}
+
+.dropdown-btn:hover {
+    background: var(--sec);
+    border-color: var(--sec);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: var(--bg);
+    border: 2px solid var(--sub);
+    border-radius: .25rem;
+    z-index: 1000;
+    min-width: 140px;
+}
+
+.dropdown-content a {
+    color: var(--txt);
+    padding: .5rem 1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.dropdown-content a[href*="edit"]::before {
+    content: "✏";
+}
+
+.dropdown-content a[href*="del"]::before {
+    content: "×";
+}
+
+.dropdown-content a:hover {
+    background: var(--shd);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6c757d;
+}
+
+.empty-state::before {
+    content: "📄";
+    font-size: 48px;
+    display: block;
+    margin-bottom: 16px;
+}

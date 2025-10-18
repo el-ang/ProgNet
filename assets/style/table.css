@@ -32,7 +32,7 @@ tr *:not(a) {
     padding: .5rem 1rem;
 }
 
-th {
+th, thead {
     background: var(--bg);
     border-color: var(--sec) !important;
     color: var(--sec);

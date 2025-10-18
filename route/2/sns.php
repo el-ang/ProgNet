@@ -1,8 +1,3 @@
-<!-- mode: mahasiswa -->
-
-<!-- mode: nilai -->
-
-<!-- display form if it the page itself, but if it modular or submission then display json. default form-self, json-status -->
 <?php
     require_once "./conn.php";
 
